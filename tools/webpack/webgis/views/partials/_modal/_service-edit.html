@@ -1,0 +1,184 @@
+<!--begin::Chat Panel-->
+<div class="modal fade" id="kt_service_edit_modal" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <!--begin::Card-->
+      <div class="card card-custom border border-primary">
+        <!--begin::Body-->
+        <div class="card-body">
+          <div class="row" style="margin-left: 0">
+            <div class="col-xl-5 col-sm-12 border rounded" id="search_map_modal"></div>
+            <div class="col-xl-7 col-sm-12">
+              <!--begin::Form-->
+              <form class="form" id="service_edit_form" novalidate="novalidate">
+                <div class="form-group row">
+                  <label class="col-lg-1 col-form-label text-nowrap">접수번호</label>
+                  <div class="col-lg-3">
+                    <div class="input-icon">
+                      <input class="form-control" disabled name="rcv_num" placeholder="등록시 자동생성" type="text"/>
+                      <span><i class="la la-info-circle"></i></span>
+                    </div>
+                  </div>
+                  <label class="col-lg-1 col-form-label text-nowrap">접수자</label>
+                  <div class="col-lg-3">
+                    <div class="input-icon">
+                      <input type="text" class="form-control" placeholder="접수자명" disabled name="rcv_nam"/>
+                      <span><i class="la la-user"></i></span>
+                    </div>
+                  </div>
+                  <label class="col-lg-1 col-form-label text-nowrap">접수일자</label>
+                  <div class="col-lg-3">
+                    <div class="date" id="kt_datetimepicker_1" data-target-input="nearest">
+                      <input type="text" class="form-control datetimepicker-input" placeholder="선택하세요" disabled
+                             name="rcv_ymd"
+                             data-target="#kt_datetimepicker_1" data-toggle="datetimepicker"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="separator separator-dashed my-6"></div>
+                <div class="form-group row">
+                  <label class="col-lg-1 col-form-label text-nowrap">민원인</label>
+                  <div class="col-lg-3">
+                    <div class="input-icon">
+                      <input type="text" class="form-control" disabled name="apm_nam" placeholder="민원인명"/>
+                      <span><i class="la la-user"></i></span>
+                    </div>
+                  </div>
+                  <label class="col-lg-1 col-form-label text-nowrap">연락처</label>
+                  <div class="col-lg-3">
+                    <div class="input-icon">
+                      <input type="text" class="form-control kt_inputmask_3" name="apm_tel" placeholder=""
+                             value=""/>
+                      <span class="pr-0"><i class="la la-phone"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-1 col-form-label text-nowrap">주소</label>
+                  <div class="col-lg-6">
+                    <div class="input-icon">
+                      <input type="text" class="form-control" name="apm_adr_road" placeholder="도로명 주소"
+                             value="" data-toggle="tooltip"
+                             data-placement="bottom" data-theme="dark" title="지도에서 선택해주세요" readonly/>
+                      <span><i class="la la-map-marker"></i></span>
+                    </div>
+                  </div>
+                  <div class="col-lg-5 mb-lg-0">
+                    <div class="input-icon">
+                      <input type="text" class="form-control" name="apm_adr_jibun" placeholder="지번 주소"
+                             value="" data-toggle="tooltip"
+                             data-placement="bottom" data-theme="dark" title="지도에서 선택해주세요" readonly/>
+                      <span><i class="la la-map-marker"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-1 col-form-label text-nowrap">상세주소</label>
+                  <div class="col-lg-6">
+                    <div class="input-icon">
+                      <input type="text" class="form-control" name="apm_adr_desc" placeholder="상세 주소"/>
+                      <span><i class="la la-pencil"></i></span>
+                    </div>
+                  </div>
+                  <div class="col-lg-2" hidden>
+                    <input type="text" class="form-control" name="apl_hjd"/>
+                    <input type="text" class="form-control" name="apl_adr"/>
+                    <input type="text" class="form-control" name="x"/>
+                    <input type="text" class="form-control" name="y"/>
+                  </div>
+                </div>
+                <div class="separator separator-dashed my-6"></div>
+                <div class="form-group row">
+                  <label class="col-lg-1 col-form-label text-nowrap">담당자</label>
+                  <div class="col-lg-3">
+                    <div class="input-icon">
+                      <input type="text" class="form-control" name="pro_nam" placeholder="담당자명"/>
+                      <span><i class="la la-user"></i></span>
+                    </div>
+                  </div>
+                  <label class="col-lg-1 col-form-label text-nowrap">접수내용</label>
+                  <div class="col-lg-3">
+                    <select class="form-control selectpicker" name="apy_cde" title="선택하세요" data-size="6">
+                      <option value="" hidden></option>
+                      <option value="단수">단수</option>
+                      <option value="도로 누수">도로 누수</option>
+                      <option value="저수압">저수압</option>
+                      <option value="수질">수질</option>
+                      <option value="신규 급수 신청">신규 급수 신청</option>
+                      <option value="앵글밸브 고장">앵글밸브 고장</option>
+                      <option value="보호통 누수 및 교체">보호통 누수 및 교체</option>
+                      <option value="계량기 동파">계량기 동파</option>
+                      <option value="기타">기타</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-2">
+                    <select class="form-control selectpicker" name="pip_dip" title="관경" data-size="6">
+                      <option value="">없음</option>
+                      <option value="16">16 mm</option>
+                      <option value="20">20 mm</option>
+                      <option value="25">25 mm</option>
+                      <option value="32">32 mm</option>
+                      <option value="40">40 mm</option>
+                      <option value="50">50 mm</option>
+                      <option value="75">75 mm</option>
+                      <option value="100">100 mm</option>
+                      <option value="150">150 mm</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-2">
+                    <select class="form-control selectpicker" name="lep_cde" title="누수 위치" data-size="6">
+                      <option value="">없음</option>
+                      <option value="새들분기">새들분기점</option>
+                      <option value="T분기">T 분기점</option>
+                      <option value="클램프">클램프 보수</option>
+                      <option value="제수변">제수변 누수</option>
+                      <option value="직관">직관 누수</option>
+                      <option value="엘보">엘보 누수</option>
+                      <option value="기타">기타</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-1 col-form-label text-nowrap">상세내용</label>
+                  <div class="col-lg-11">
+                    <textarea class="form-control" name="apl_exp" rows="5" placeholder="민원 상세 내용"></textarea>
+                  </div>
+                </div>
+                <div class="separator separator-dashed my-6"></div>
+                <div class="form-group row mb-0">
+                  <label class="col-lg-1 col-form-label text-nowrap">처리상태</label>
+                  <div class="col-lg-3 mb-lg-0 mb-1">
+                    <select class="form-control selectpicker" name="pro_cde" title="선택하세요" data-size="4">
+                      <option value="" hidden></option>
+                      <option value="신청접수">신청접수</option>
+                      <option value="처리완료">처리완료</option>
+                    </select>
+                  </div>
+                  <label class="col-lg-1 col-form-label text-nowrap">대행업체</label>
+                  <div class="col-lg-3 mb-lg-0 mb-1">
+                    <select class="form-control selectpicker" name="opr_nam" title="선택하세요" data-size="4">
+                    </select>
+                  </div>
+                  <div class="col-lg-4 mb-1" style="display: flex;justify-content: flex-end">
+                    <button type="button" class="btn btn-primary font-weight-bold pl-6 pr-6"
+                            id="kt_service_edit_submit">
+                      <i class="la la-check-circle"></i> 저장
+                    </button>
+                    <button type="button" class="btn btn-secondary ml-2" id="kt_service_edit_cancel">취소</button>
+                  </div>
+                </div>
+              </form>
+              <!--end::Form-->
+            </div>
+          </div>
+        </div>
+        <!--end::Body-->
+        <div class="overlay-layer bg-gray-o-90" style="display: none">
+          <div class="spinner spinner-primary spinner-lg"></div>
+        </div>
+      </div>
+      <!--end::Card-->
+    </div>
+  </div>
+</div>
+<!--end::Chat Panel-->

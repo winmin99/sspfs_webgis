@@ -1,0 +1,283 @@
+////////////////////////////////////////////////////////////////
+
+// Source reference not found
+
+.form-group {
+  //margin-top: 1.5rem;
+  margin-bottom: 1.0rem;
+}
+
+.form-control {
+  //height: calc(1.0em + 1rem + 2px);
+  //line-height: 1;
+}
+
+////////////////////////////////////////////////////////////////
+
+#serv_sche_modal, #serv_pres_modal {
+  .modal-header {
+    padding: 1rem 1rem;
+  }
+
+  .modal-body {
+    padding: 0 1rem 1rem 1rem;
+
+    .dataTables_filter {
+      padding: 1rem 0 0 0;
+    }
+
+    .table th,
+    .table td {
+      padding: 0.5rem 0.1rem;
+    }
+
+    #kt_datatable_schedule_ext {
+      white-space: pre-wrap;
+      justify-content: flex-start;
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////
+
+#card_register {
+  .input-group-text {
+    border: none;
+  }
+
+  .col-form-label {
+    padding-right: 0;
+  }
+
+  .card-body {
+    background: none;
+
+    .bootstrap-select.is-valid .btn.dropdown-toggle {
+      border-color: #1BC5BD !important;
+    }
+
+    .bootstrap-select.is-invalid .btn.dropdown-toggle {
+      border-color: #F64E60 !important;
+    }
+  }
+
+  .card-footer {
+    background: none;
+  }
+
+  .overlay-layer {
+    border-radius: 0.5rem;
+    display: none;
+  }
+}
+
+////////////////////////////////////////////////////////////////
+
+#card_search_map {
+  border-style: solid;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  border-color: #0078D7;
+  border-width: 0.2rem;
+
+  #search_map_wrapper {
+    width: 100%;
+    height: 43vh;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    transition: all 0.5s ease;
+
+    #search_map {
+      position: absolute;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      transition: all 0.5s ease;
+    }
+  }
+
+  .ribbon-target {
+    bottom: -0.2rem;
+    right: -0.3rem;
+    box-shadow: none;
+    border-style: solid;
+    border-bottom-style: none;
+    border-color: #0078D7;
+    border-width: 0.2rem;
+    padding: 0.5rem;
+
+    .btn {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0.5rem;
+    }
+  }
+}
+
+#card_search {
+  box-shadow: none;
+
+  .card-body {
+    .dataTables_wrapper {
+
+      .row:first-child {
+        display: block;
+      }
+
+      .row {
+        width: auto;
+        margin: 0 10px;
+      }
+
+      #kt_datatable_btn_group {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+
+      .dataTables_pager {
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+    }
+
+    #kt_datatable {
+      margin: 0 !important;
+      thead {
+        th {
+          color: #0078D7;
+          font-weight: bolder;
+          white-space: nowrap;
+          padding: 0.5rem 0.75rem 0.25rem 0.75rem;
+          border-bottom-color: transparent;
+          max-width: fit-content;
+        }
+
+        .filter {
+          th {
+            padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+          }
+
+          .datatable-input {
+            font-weight: bolder;
+          }
+        }
+
+        .bootstrap-select > .dropdown-toggle {
+          padding: 0.45rem 1rem;
+          border-radius: 0.28rem;
+        }
+
+        #yadcf-filter-wrapper--kt_datatable_daterange {
+          max-width: min-content;
+
+          .yadcf-filter-wrapper {
+            .yadcf-filter-wrapper-inner {
+              border: none;
+            }
+
+            .yadcf-filter-range-date {
+              border: none;
+            }
+
+            .yadcf-filter-range-date-seperator {
+              margin: 0;
+            }
+
+            input {
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      tr {
+        td {
+          white-space: nowrap;
+          padding: 0.4rem 1.5rem 0.4rem 1rem;
+          margin: 0;
+
+          .dtr-data {
+            white-space: pre-wrap;
+            justify-content: flex-start;
+          }
+        }
+
+        td:first-child {
+          padding-left: 0.5rem !important;
+        }
+
+        // row expand & collapse button
+        td.dtr-control:before {
+          border: none;
+          box-shadow: none;
+          color: #0078D7;
+          background-color: transparent;
+          font-size: larger;
+          font-weight: bolder;
+        }
+      }
+
+      tr.selected td {
+        background-color: #0078D733;
+      }
+
+      .text-blue {
+        color: blue;
+        font-weight: bolder;
+      }
+    }
+
+    #daterange {
+      width: 1px !important;
+      max-width: min-content !important;
+    }
+  }
+
+  .overlay-layer {
+    border-radius: 0.5rem;
+    display: none;
+  }
+}
+
+.context-menu-item {
+  padding: 0.2em 2.5em !important;
+  margin: 0.3rem 0;
+}
+
+#kt_service_edit_modal {
+  .input-icon .form-control {
+    padding-left: calc(1.5em + 0.75rem);
+  }
+
+  #service_edit_form {
+    textarea {
+      resize: vertical;
+      max-height: 35vh;
+      min-height: 10vh;
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////
+
+.was-validated .form-control:valid, .form-control.is-valid {
+  padding-right: 0;
+}
+
+////////////////////////////////////////////////////////////////
+
+// demo5/src/sass/components/_table.scss:46
+
+.table {
+  &.table-head-custom {
+    thead {
+      tr, th {
+        color: black !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,213 @@
+<!--begin::Header-->
+<div class="header header-fixed" id="kt_header">
+  <!--begin::Container-->
+  <div class="container-fluid d-flex justify-content-end">
+    <!--begin::Topbar-->
+    <div class="topbar">
+      <div class="topbar-item position-absolute" style="left: 1vw;top: 0.5vh;">
+        <!--begin::Aside Toggle-->
+        <button class="btn btn-icon aside-toggle ml-n3" id="kt_aside_desktop_toggle">
+        <span class="svg-icon svg-icon-white svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo7\dist/../src/media/svg/icons\Text\Menu.svg--><svg
+            height="24px"
+            version="1.1" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+        <rect height="24" width="24" x="0" y="0"/>
+        <rect fill="#000000" height="3" rx="1.5" width="16" x="4" y="5"/>
+        <path
+            d="M5.5,15 L18.5,15 C19.3284271,15 20,15.6715729 20,16.5 C20,17.3284271 19.3284271,18 18.5,18 L5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 Z M5.5,10 L18.5,10 C19.3284271,10 20,10.6715729 20,11.5 C20,12.3284271 19.3284271,13 18.5,13 L5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z"
+            fill="#000000" opacity="0.8"/>
+    </g>
+        </svg><!--end::Svg Icon--></span>
+        </button>
+        <!--end::Aside Toggle-->
+        <!--begin::Logo-->
+        <a href="/">
+          <img alt="Logo" class="logo-sticky max-h-35px" src="assets/media/logos/logo-{{company_en}}.png"/>
+        </a>
+        <!--end::Logo-->
+        <!--begin::Desktop Search-->
+        <div class="quick-search quick-search-inline ml-5 h-35px" id="kt_quick_search_inline">
+          <!--begin::Form-->
+          <form class="quick-search-form" method="get">
+            <div class="input-group rounded-sm bg-white">
+              <div class="input-group-prepend">
+												<span class="input-group-text">
+                            <a class="label label-lg label-info label-inline font-weight-bolder mr-1"
+                               data-container="body"
+                               data-placement="bottom" data-theme="dark" data-toggle="tooltip" href="javascript:;"
+                               aria-label="시설물•주소를 검색합니다"
+                               title="시설물•주소를 검색합니다">
+                            </a>
+												</span>
+              </div>
+              <input class="form-control h-35px quick-search-inline" placeholder="검색어를 입력하세요..." type="text"/>
+              <div class="input-group-append">
+												<span class="input-group-text">
+													<i class="quick-search-close ki ki-close icon-sm text-muted"></i>
+												</span>
+              </div>
+            </div>
+          </form>
+          <!--end::Form-->
+          <!--begin::Search Toggle-->
+          <div data-offset="0px,10px" data-toggle="dropdown" id="kt_quick_search_toggle"></div>
+          <!--end::Search Toggle-->
+          <!--begin::Dropdown-->
+          <div class="dropdown-menu dropdown-menu-left dropdown-menu-lg dropdown-menu-anim-up">
+            <div class="quick-search-wrapper scroll" data-height="500" data-mobile-height="250"
+                 data-scroll="true"></div>
+          </div>
+          <!--end::Dropdown-->
+        </div>
+        <!--end::Desktop Search-->
+      </div>
+      <!--begin::Create-->
+      <div class="topbar-item">
+        <!--begin::Toggle-->
+        <button
+            class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-xl"
+            id="btn-map-location"
+            type="button">
+          내 위치
+        </button>
+        <!--end::Toggle-->
+      </div>
+      <!--end::Create-->
+      <!--begin::Create-->
+      <div class="topbar-item">
+        <!--begin::Toggle-->
+        <button
+            class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-xl"
+            id="btn-map-hybrid"
+            type="button">
+          일반 지도
+        </button>
+        <!--end::Toggle-->
+      </div>
+      <!--end::Create-->
+      <!--begin::Create-->
+      <div class="topbar-item">
+        <!--begin::Toggle-->
+        <button
+            class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-xl"
+            id="btn-map-roadview"
+            type="button">
+          로드뷰
+        </button>
+        <!--end::Toggle-->
+      </div>
+      <!--end::Create-->
+      <!--begin::Create-->
+      <div class="topbar-item">
+        <!--begin::Toggle-->
+        <button
+            class="ol-table-code ol-table-code-geo-top btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-xl"
+            id="geo_line_as"
+            type="button">
+          지적선
+        </button>
+        <!--end::Toggle-->
+      </div>
+      <!--end::Create-->
+      <!--begin::Create-->
+      <div class="topbar-item">
+        <!--begin::Toggle-->
+        <button class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-xl"
+                id="btn-map-terrain"
+                type="button">
+          지형도
+        </button>
+        <!--end::Toggle-->
+      </div>
+      <!--end::Create-->
+      <div class="topbar-item">
+        <!--begin::Toggle-->
+        <button
+            class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-xl"
+            id="btn-map-length"
+            type="button" value="LineString">
+          거리
+        </button>
+        <!--end::Toggle-->
+      </div>
+      <div class="topbar-item">
+        <!--begin::Toggle-->
+        <button
+            class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-xl"
+            id="btn-map-area"
+            type="button" value="Polygon">
+          면적
+        </button>
+        <!--end::Toggle-->
+      </div>
+      <div class="outer ml-4 mr-2">
+        <div class="inner"></div>
+      </div>
+      <div class="topbar-item">
+        <!--begin::Toggle-->
+        <button type="button"
+                class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-lg"
+                aria-haspopup="false" aria-expanded="false" id="btn-search"
+                data-offset="0,10">
+          시설 관리
+        </button>
+        <!--end::Toggle-->
+      </div>
+ {{!--<div class="outer ml-4 mr-2">
+        <div class="inner"></div>
+      </div>
+      <div class="topbar-item">
+        <!--begin::Toggle-->
+        <button aria-expanded="false"
+                aria-haspopup="false"
+                class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-xl"
+                data-offset="0,10" data-toggle="dropdown"
+                type="button">
+          민원 관리
+        </button>
+        <!--end::Toggle-->
+        <!--begin::Dropdown-->
+        <div class="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-sm">
+          <!--[html-partial:begin:{"id":"demo1/dist/inc/view/partials/content/dropdowns/dropdown-4","page":"index"}]/-->
+          <!--begin::Navigation-->
+          <ul class="navi navi-hover navi-active navi-accent py-3">
+            <li class="navi-header font-weight-bolder text-uppercase font-size-md pb-2">민원</li>
+            <li class="navi-item">
+              <a class="navi-link active" href="/service/register" id="navi-search-link-0">
+                <span class="navi-bullet">
+                  <i class="bullet bullet-dot"></i>
+                </span>
+                <span class="navi-text">&nbsp;민원 등록</span>
+              </a>
+            </li>
+            <li class="navi-item">
+              <a class="navi-link" href="service/search" id="navi-search-link-2">
+                <span class="navi-bullet">
+                  <i class="bullet bullet-dot"></i>
+                </span>
+                <span class="navi-text">&nbsp;민원 조회</span>
+              </a>
+            </li>
+            <div class="separator separator-dashed my-3"></div>
+            <li class="navi-header font-weight-bolder text-uppercase font-size-md pb-2">근무</li>
+            <li class="navi-item" data-target="#serv_sche_modal" data-toggle="modal">
+              <a class="navi-link" href="javascript:;">
+                <span class="navi-bullet">
+                  <i class="bullet bullet-dot"></i>
+                </span>
+                <span class="navi-text">&nbsp;비상근무 편성</span>
+              </a>
+            </li>
+          </ul>
+          <!--end::Navigation-->
+          <!--[html-partial:end:{"id":"demo1/dist/inc/view/partials/content/dropdowns/dropdown-4","page":"index"}]/-->
+        </div>
+        <!--end::Dropdown-->
+      </div>
+    --}}
+    </div>
+    <!--end::Topbar-->
+  </div>
+  <!--end::Container-->
+</div>
+<!--end::Header-->

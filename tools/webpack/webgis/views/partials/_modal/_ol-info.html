@@ -1,0 +1,60 @@
+<!--begin::Chat Panel-->
+<div class="modal fade modal-sticky modal-sticky-bottom-right" id="kt_chat_modal" role="dialog" data-backdrop="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--begin::Card-->
+      <div class="card card-custom">
+        <!--begin::Header-->
+        <div class="card-header">
+          <div class="card-title">
+            <h3 class="card-label"></h3>
+            <span class="label label-rounded label-success label-inline font-weight-bold"></span>
+          </div>
+          <div class="card-toolbar">
+            <a href="#" class="btn btn-icon btn-sm btn-hover-light-primary" data-dismiss="modal">
+              <i class="ki ki-close icon-nm"></i>
+            </a>
+          </div>
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body">
+          <!--begin::Scroll-->
+          <div data-scroll="true" data-height="325">
+            <table class="table table-striped">
+              <tbody></tbody>
+            </table>
+          </div>
+          <!--end::Scroll-->
+        </div>
+        <!--end::Body-->
+        <!--begin::Footer-->
+        <div class="card-footer">
+          <!--begin::Compose-->
+          <a href="javascript:;" class="btn btn-outline-secondary btn-hover-primary btn-md font-weight-bolder"
+             id="btn_location"
+             data-toggle="tooltip" title="화면 가운데로 이동" data-placement="auto">
+            <i class="fas fa-map-marker-alt icon-md"></i>
+          </a>
+          <div class="btn-group" role="group">
+            <a href="javascript:;" class="btn disabled btn-outline-secondary btn-hover-secondary btn-md font-weight-bolder"
+               id="btn_history_modal">
+              <i class="far fa-file-alt icon-md"></i> 보수내역
+            </a>
+            <a href="javascript:;" class="btn disabled btn-outline-secondary btn-hover-secondary btn-md font-weight-bolder"
+               id="btn_photo_modal">
+              <i class="far fa-file-image icon-md"></i> 사진보기
+            </a>
+          </div>
+          <!--begin::Compose-->
+        </div>
+        <!--end::Footer-->
+        <div class="overlay-layer bg-gray-o-75" style="display: none;">
+          <div class="spinner spinner-danger spinner-lg spinner-lg"></div>
+        </div>
+      </div>
+      <!--end::Card-->
+    </div>
+  </div>
+</div>
+<!--end::Chat Panel-->

@@ -1,0 +1,11 @@
+#map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}

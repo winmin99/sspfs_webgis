@@ -1,0 +1,63 @@
+{
+  "name": "webgis",
+  "private": true,
+  "scripts": {
+    "start": "node -r dotenv/config ./.build/app.bundle.js dotenv_config_path=./build/.env",
+    "buildServer": "webpack --watch --config ./webpack.server.js",
+    "prodServer": "webpack --mode=production --config ./webpack.server.js",
+    "test": "jest --coverage",
+    "ncu(devDependencies)": "ncu --dep dev",
+    "eslint": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/helloelliote/webgis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/helloelliote/webgis/issues"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
+    "connect-pg-simple": "^7.0.0",
+    "cookie-parser": "~1.4.6",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
+    "express": "~4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-promise-router": "^4.1.1",
+    "express-session": "^1.17.2",
+    "formidable": "v2",
+    "helmet": "^4.6.0",
+    "http-errors": "^2.0.0",
+    "moment": "^2.29.2",
+    "morgan": "~1.10.0",
+    "mysql2": "^2.3.3",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.7.1",
+    "rate-limiter-flexible": "^2.3.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-proposal-class-properties": "^7.16.5",
+    "@babel/plugin-transform-runtime": "^7.16.5",
+    "@babel/plugin-transform-strict-mode": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "babel-jest": "^27.4.5",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^10.2.0",
+    "eslint": "^8.5.0",
+    "jest": "^27.4.5",
+    "jest-config": "^27.4.5",
+    "merge-jsons-webpack-plugin": "^2.0.1",
+    "regenerator-runtime": "^0.13.9",
+    "terser-webpack-plugin": "^5.3.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "packageManager": "yarn@3.6.1"
+}

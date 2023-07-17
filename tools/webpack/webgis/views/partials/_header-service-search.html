@@ -1,0 +1,295 @@
+<!--begin::Header-->
+<div id="kt_header" class="header header-fixed">
+
+  <!--begin::Container-->
+  <div class="container-fluid d-flex align-items-stretch justify-content-between">
+
+    <!--begin::Left-->
+    <div class="d-none d-lg-flex align-items-center mr-3">
+
+      <!--begin::Aside Toggle-->
+      <button class="btn btn-icon aside-toggle ml-n3 mr-10" id="kt_aside_desktop_toggle" title="kt_aside_desktop_toggle">
+        <span class="svg-icon svg-icon-white svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo7\dist/../src/media/svg/icons\Text\Menu.svg--><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect x="0" y="0" width="24" height="24"/>
+        <rect fill="#000000" x="4" y="5" width="16" height="3" rx="1.5"/>
+        <path
+            d="M5.5,15 L18.5,15 C19.3284271,15 20,15.6715729 20,16.5 C20,17.3284271 19.3284271,18 18.5,18 L5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 Z M5.5,10 L18.5,10 C19.3284271,10 20,10.6715729 20,11.5 C20,12.3284271 19.3284271,13 18.5,13 L5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z"
+            fill="#000000" opacity="0.8"/>
+    </g>
+        </svg><!--end::Svg Icon--></span>
+      </button>
+
+      <!--end::Aside Toggle-->
+
+      <!--begin::Logo-->
+      <a href="/">
+        <img alt="Logo" src="assets/media/logos/logo-{{company_en}}.png" class="logo-sticky max-h-35px"/>
+      </a>
+
+      <!--end::Logo-->
+
+      <!--begin::Desktop Search-->
+      <div class="quick-search quick-search-inline ml-15 w-375px h-35px" id="kt_quick_search_inline">
+
+        <!--begin::Form-->
+        <form method="get" class="quick-search-form">
+          <div class="input-group rounded-sm bg-white">
+            <div class="input-group-prepend">
+												<span class="input-group-text">
+                            <a href="javascript:;"
+                               class="label label-lg label-info label-inline font-weight-bolder mr-1"
+                               data-container="body" data-toggle="tooltip" data-placement="bottom" data-theme="dark"
+                               aria-label="시설물•주소를 검색합니다"
+                               title="시설물•주소를 검색합니다">
+                            </a>
+												</span>
+            </div>
+            <input type="text" class="form-control h-35px quick-search-inline" placeholder="검색어를 입력하세요..."/>
+            <div class="input-group-append">
+												<span class="input-group-text">
+													<i class="quick-search-close ki ki-close icon-sm text-muted"></i>
+												</span>
+            </div>
+          </div>
+        </form>
+
+        <!--end::Form-->
+
+        <!--begin::Search Toggle-->
+        <div id="kt_quick_search_toggle" data-toggle="dropdown" data-offset="0px,10px"></div>
+
+        <!--end::Search Toggle-->
+
+        <!--begin::Dropdown-->
+        <div class="dropdown-menu dropdown-menu-left dropdown-menu-lg dropdown-menu-anim-up">
+          <div class="quick-search-wrapper scroll" data-scroll="true" data-height="500" data-mobile-height="250"></div>
+        </div>
+
+        <!--end::Dropdown-->
+      </div>
+
+      <!--end::Desktop Search-->
+    </div>
+
+    <!--end::Left-->
+
+    <!--begin::Topbar-->
+    <div class="topbar">
+
+      <!--begin::Create-->
+      <div class="topbar-item">
+
+        <!--begin::Toggle-->
+        <button type="button"
+                class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-lg"
+                id="btn-map-hybrid">
+          일반 지도
+        </button>
+
+        <!--end::Toggle-->
+      </div>
+
+      <!--end::Create-->
+
+      <!--begin::Create-->
+      <div class="topbar-item">
+
+        <!--begin::Toggle-->
+        <button type="button"
+                class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-lg"
+                id="btn-map-roadview">
+          로드뷰
+        </button>
+
+        <!--end::Toggle-->
+      </div>
+
+      <!--end::Create-->
+
+      <div class="outer ml-4 mr-2">
+        <div class="inner"></div>
+      </div>
+
+      <div class="topbar-item">
+
+        <!--begin::Toggle-->
+        <button type="button"
+                class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-lg"
+                data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"
+                data-offset="0,10">
+          시설 관리
+        </button>
+
+        <!--end::Toggle-->
+
+        <!--begin::Dropdown-->
+        <div class="dropdown-menu dropdown-menu-sm p-0 m-0 dropdown-menu-right dropdown-menu-anim-up">
+
+          <!--begin::Navigation-->
+          <ul class="navi navi-hover navi-active navi-accent py-3">
+            <li class="navi-header font-weight-bolder text-uppercase font-size-md pb-2">문서자료실</li>
+            <li class="navi-item">
+              <a href="/data/storage" class="navi-link" id="navi-data-link-0">
+                <span class="navi-bullet">
+                  <i class="bullet bullet-dot"></i>
+                </span>
+                <span class="navi-text">&nbsp;업로드 및 다운로드</span>
+              </a>
+            </li>
+          </ul>
+
+          <!--end::Navigation-->
+
+          <div class="separator separator-dashed my-1"></div>
+
+          <!--begin::Navigation-->
+          <ul class="navi navi-hover navi-active navi-accent py-3" id="viw_wtl_pipe_lm_filter">
+            <li class="navi-header font-weight-bolder text-uppercase font-size-md pb-2">가압장</li>
+            <li class="navi-item" data-toggle="modal" data-target="#serv_pres_modal">
+              <a href="javascript:;" class="navi-link" style="white-space: nowrap">
+                <span class="navi-bullet">
+                <i class="bullet bullet-dot"></i>
+                </span>
+                <span class="navi-text">&nbsp;가압장 관리업체 현황</span>
+              </a>
+            </li>
+          </ul>
+
+          <!--end::Navigation-->
+
+        </div>
+
+        <!--end::Dropdown-->
+      </div>
+
+      <div class="outer ml-4 mr-2">
+        <div class="inner"></div>
+      </div>
+
+      <!--begin::Create-->
+      <div class="topbar-item">
+
+        <!--begin::Toggle-->
+        <button type="button"
+                class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-lg"
+                data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"
+                data-offset="0,10">
+          <!--          <span class="svg-icon svg-icon-md">&lt;!&ndash;begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo5\dist/../src/media/svg/icons\Communication\Active-call.svg&ndash;&gt;<svg-->
+          <!--              xmlns="http://www.w3.org/2000/svg"-->
+          <!--              width="24px" height="24px" viewBox="0 0 24 24" version="1.1">-->
+          <!--    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
+          <!--        <rect x="0" y="0" width="24" height="24"/>-->
+          <!--        <path-->
+          <!--            d="M13.0799676,14.7839934 L15.2839934,12.5799676 C15.8927139,11.9712471 16.0436229,11.0413042 15.6586342,10.2713269 L15.5337539,10.0215663 C15.1487653,9.25158901 15.2996742,8.3216461 15.9083948,7.71292558 L18.6411989,4.98012149 C18.836461,4.78485934 19.1530435,4.78485934 19.3483056,4.98012149 C19.3863063,5.01812215 19.4179321,5.06200062 19.4419658,5.11006808 L20.5459415,7.31801948 C21.3904962,9.0071287 21.0594452,11.0471565 19.7240871,12.3825146 L13.7252616,18.3813401 C12.2717221,19.8348796 10.1217008,20.3424308 8.17157288,19.6923882 L5.75709327,18.8875616 C5.49512161,18.8002377 5.35354162,18.5170777 5.4408655,18.2551061 C5.46541191,18.1814669 5.50676633,18.114554 5.56165376,18.0596666 L8.21292558,15.4083948 C8.8216461,14.7996742 9.75158901,14.6487653 10.5215663,15.0337539 L10.7713269,15.1586342 C11.5413042,15.5436229 12.4712471,15.3927139 13.0799676,14.7839934 Z"-->
+          <!--            fill="#000000"/>-->
+          <!--        <path-->
+          <!--            d="M14.1480759,6.00715131 L13.9566988,7.99797396 C12.4781389,7.8558405 11.0097207,8.36895892 9.93933983,9.43933983 C8.8724631,10.5062166 8.35911588,11.9685602 8.49664195,13.4426352 L6.50528978,13.6284215 C6.31304559,11.5678496 7.03283934,9.51741319 8.52512627,8.02512627 C10.0223249,6.52792766 12.0812426,5.80846733 14.1480759,6.00715131 Z M14.4980938,2.02230302 L14.313049,4.01372424 C11.6618299,3.76737046 9.03000738,4.69181803 7.1109127,6.6109127 C5.19447112,8.52735429 4.26985715,11.1545872 4.51274152,13.802405 L2.52110319,13.985098 C2.22450978,10.7517681 3.35562581,7.53777247 5.69669914,5.19669914 C8.04101739,2.85238089 11.2606138,1.72147333 14.4980938,2.02230302 Z"-->
+          <!--            fill="#000000" fill-rule="nonzero" opacity="0.3"/>-->
+          <!--    </g>-->
+          <!--</svg>&lt;!&ndash;end::Svg Icon&ndash;&gt;</span>-->
+          민원 관리
+        </button>
+
+        <!--end::Toggle-->
+
+        <!--begin::Dropdown-->
+        <div class="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-sm">
+
+          <!--[html-partial:begin:{"id":"demo1/dist/inc/view/partials/content/dropdowns/dropdown-4","page":"index"}]/-->
+
+          <!--begin::Navigation-->
+          <ul class="navi navi-hover navi-active navi-accent py-3">
+            <li class="navi-header font-weight-bolder text-uppercase font-size-md pb-2">민원</li>
+            <li class="navi-item">
+              <a href="/service/register" class="navi-link active" id="navi-search-link-0">
+                <span class="navi-bullet">
+                  <i class="bullet bullet-dot"></i>
+                </span>
+                <span class="navi-text">&nbsp;민원 등록</span>
+              </a>
+            </li>
+            <!--            <li class="navi-item">-->
+            <!--              <a href="#" class="navi-link" id="navi-search-link-1">-->
+            <!--													<span class="navi-icon">-->
+            <!--														<i class="la la-map-marked-alt icon-xl"></i>-->
+            <!--													</span>-->
+            <!--                <span class="navi-text">&nbsp;민원 현황 보기</span>-->
+            <!--                <span class="label label-light-danger font-weight-bold label-inline">5</span>-->
+            <!--              </a>-->
+            <!--            </li>-->
+            <li class="navi-item">
+              <a href="service/search" class="navi-link" id="navi-search-link-2">
+                <span class="navi-bullet">
+                  <i class="bullet bullet-dot"></i>
+                </span>
+                <span class="navi-text">&nbsp;민원 조회</span>
+              </a>
+            </li>
+            <div class="separator separator-dashed my-3"></div>
+            <li class="navi-header font-weight-bolder text-uppercase font-size-md pb-2">근무</li>
+            <li class="navi-item" data-toggle="modal" data-target="#serv_sche_modal">
+              <a href="javascript:;" class="navi-link">
+                <span class="navi-bullet">
+                  <i class="bullet bullet-dot"></i>
+                </span>
+                <span class="navi-text">&nbsp;비상근무 편성</span>
+              </a>
+            </li>
+            <!--            <li class="navi-item">-->
+            <!--              <form class="px-4 py-3">-->
+            <!--                <div class="input-icon">-->
+            <!--                  <input type="text" class="form-control" placeholder=""/>-->
+            <!--                  <span><i class="la la-flash icon-lg"></i></span>-->
+            <!--                </div>-->
+            <!--                <span class="form-text text-muted">민원인, 연락처 등으로 검색합니다</span>-->
+            <!--              </form>-->
+            <!--            </li>-->
+          </ul>
+
+          <!--end::Navigation-->
+
+          <!--[html-partial:end:{"id":"demo1/dist/inc/view/partials/content/dropdowns/dropdown-4","page":"index"}]/-->
+        </div>
+
+        <!--end::Dropdown-->
+      </div>
+
+      <!--end::Create-->
+
+      <!--end::Create-->
+
+      <!--begin::Quick Panel-->
+
+      <!--end::Quick Actions-->
+
+      <!--begin::Quick Actions-->
+
+      <!--end::Quick panel-->
+
+      <!--begin::User-->
+      <!--      <div class="topbar-item">-->
+      <!--        <button type="button"-->
+      <!--                class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-lg"-->
+      <!--                data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"-->
+      <!--                data-offset="0,10">-->
+      <!--          사용자-->
+      <!--        </button>-->
+      <!--      </div>-->
+
+      <!--end::User-->
+
+      <!--begin::Notifications-->
+
+      <!--end::Notifications-->
+    </div>
+
+    <!--end::Topbar-->
+  </div>
+
+  <!--end::Container-->
+</div>
+
+<!--end::Header-->

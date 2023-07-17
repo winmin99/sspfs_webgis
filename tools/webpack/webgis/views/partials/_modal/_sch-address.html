@@ -1,0 +1,64 @@
+<!-- Modal-->
+<div class="modal fade" id="serv_sche_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="justify-content: flex-start">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <!--begin::Dropdown-->
+        <div class="dropdown dropdown-inline ml-2">
+          <button type="button" class="btn btn-light-primary btn-sm font-weight-bolder" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+            <i class="la la-download"></i>내보내기
+          </button>
+          <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+            <ul class="navi flex-column navi-hover py-2">
+              <li class="navi-item">
+                <a href="#" class="navi-link" id="export_print_schedule">
+																<span class="navi-icon">
+																	<i class="la la-print"></i>
+																</span>
+                  <span class="navi-text">인쇄</span>
+                </a>
+              </li>
+              <li class="navi-item">
+                <a href="#" class="navi-link" id="export_excel_schedule">
+																<span class="navi-icon">
+																	<i class="la la-file-excel-o"></i>
+																</span>
+                  <span class="navi-text">Excel</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--end::Dropdown-->
+        <div class="card-toolbar mr-2" style="position: absolute;right: 0">
+          <a href="#" class="btn btn-icon btn-sm btn-hover-light-primary" data-dismiss="modal">
+            <i class="ki ki-close icon-nm"></i>
+          </a>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div data-scroll="true" data-height="625">
+          <!--begin: Datatable-->
+          <table class="table table-separate table-head-custom table-responsive-xl hover" id="kt_datatable_schedule">
+            <thead>
+            <tr>
+              <th>기간</th>
+              <th>업체명</th>
+              <th>비상근무기간</th>
+              <th>대표자</th>
+              <th>연락처(대표)</th>
+              <th>현장소장</th>
+              <th>연락처(현장)</th>
+              <th>비고</th>
+            </tr>
+            </thead>
+          </table>
+          <div id="kt_datatable_schedule_ext"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

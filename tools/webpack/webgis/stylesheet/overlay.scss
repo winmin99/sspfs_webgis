@@ -1,0 +1,83 @@
+// address
+
+.popover {
+  min-width: max-content;
+  font-weight: bolder;
+
+  .popover-body {
+    color: #7337EE;
+    font-size: 1.05rem !important;
+    min-width: max-content;
+    padding: 0;
+  }
+
+  .popover-close {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+  }
+
+  .popover-close:after {
+    color: #7337EE;
+    content: "✖";
+  }
+}
+
+.popover-info {
+  padding: 0.5rem 2rem 0.5rem 1.5rem;
+  border-color: #7337EE;
+  color: white;
+}
+
+.popover-info .arrow:before {
+  border-top-color: #7337EE;
+}
+
+// notification
+
+:root {
+  --animate-duration: 500ms;
+  //--animate-delay: 1s;
+}
+
+// measure
+
+.ol-tooltip {
+  position: relative;
+  background: #00000066;
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  opacity: 0.8;
+  white-space: nowrap;
+  //font-size: 12px;
+}
+
+.ol-tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+
+.ol-tooltip-static {
+  background-color: #FFCC33;
+  color: black;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.ol-tooltip-measure:before,
+.ol-tooltip-static:before {
+  border-top: 6px solid #00000066;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+
+.ol-tooltip-static:before {
+  border-top-color: #FFCC33;
+}

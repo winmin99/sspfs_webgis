@@ -1,0 +1,109 @@
+<!--begin::Chat Panel-->
+<div class="modal fade" id="kt_history_modal" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <!--begin::Card-->
+      <div class="card card-custom">
+        <!--begin::Header-->
+        <div class="card-header">
+          <div class="card-title">
+            <h3 class="card-label"></h3>
+          </div>
+          <div class="card-toolbar">
+            <a href="#" class="btn btn-icon btn-sm btn-hover-light-primary" data-dismiss="modal">
+              <i class="ki ki-close icon-nm"></i>
+            </a>
+          </div>
+        </div>
+        <!--begin::Body-->
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xl-5 col-sm-12">
+              <div class="p-1">
+                <h6>
+                  <i class="far fa-file-alt icon-md mr-3"></i>내역
+                  <small>상세 내용 및 사진을 확인하려면 클릭하세요</small>
+                </h6>
+              </div>
+              <!--begin: Datatable-->
+              <table class="table nowrap text-center border rounded">
+                <thead class="thead-light">
+                <tr>
+                  <th>#</th>
+                  <th>일자</th>
+                  <th>구분</th>
+                  <th>사유</th>
+                  <th>시공자</th>
+                  <th>사진</th>
+                </tr>
+                </thead>
+              </table>
+              <!--end: Datatable-->
+              <div class="mt-2 p-3 border rounded" id="kt_history_modal_details"></div>
+            </div>
+            <div class="col-xl-7 col-sm-12">
+              <div
+                  id="carouselExampleCaptions"
+                  class="carousel border rounded"
+                  data-ride="false"
+                  data-interval="false"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item">
+                    <img
+                        src="/assets/media/bg/bg-default.png"
+                        class="rounded img-fluid"
+                        alt="..."
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <button
+                          type="button"
+                          class="btn btn-elevate btn-elevate-air"
+                          data-skin="dark"
+                          data-toggle="kt-tooltip"
+                          data-original-title="클릭하여 원본 확인"
+                          title="클릭하여 원본 확인"
+                          style="background-color:rgba(0,0,0,0.55);color: white"
+                      >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <a
+                    class="carousel-control-prev"
+                    href="#carouselExampleCaptions"
+                    role="button"
+                    data-slide="prev"
+                >
+                  <i
+                      class="flaticon2-fast-back"
+                      aria-hidden="true"
+                      style="color: red;font-size: 2rem"
+                  ></i>
+                </a>
+                <a
+                    class="carousel-control-next"
+                    href="#carouselExampleCaptions"
+                    role="button"
+                    data-slide="next"
+                >
+                  <i
+                      class="flaticon2-fast-next"
+                      aria-hidden="true"
+                      style="color: red;font-size: 2rem"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end::Body-->
+        <div class="overlay-layer bg-gray-o-75" style="display: none;">
+          <div class="spinner spinner-danger spinner-lg spinner-lg"></div>
+        </div>
+      </div>
+      <!--end::Card-->
+    </div>
+  </div>
+</div>
+<!--end::Chat Panel-->

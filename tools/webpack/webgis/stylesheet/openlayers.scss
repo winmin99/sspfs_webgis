@@ -1,0 +1,42 @@
+.parent {
+  background: #edede8;
+}
+
+.menu-item {
+  a.menu-link {
+    i.menu-bullet {
+      min-width: 2rem;
+      text-align: center;
+      display: block;
+
+      img {
+        max-height: 1.25rem;
+        min-height: 1rem;
+      }
+    }
+  }
+}
+
+.ol-zoom {
+  top: 40vh;
+  right: 1em;
+  left: unset;
+}
+
+.ol-control {
+  button {
+    font-size: xxx-large;
+    height: 80px;
+    width: 80px;
+    background-color: rgba(0, 120, 215, .5);
+    margin: 3px;
+  }
+
+  button:focus {
+    background-color: rgba(0, 120, 215, .5);
+  }
+
+  button:hover {
+    background-color: rgba(0, 120, 215, .5);
+  }
+}

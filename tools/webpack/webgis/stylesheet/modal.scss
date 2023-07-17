@@ -1,0 +1,184 @@
+// Modal
+
+#kt_chat_modal {
+
+  max-width: 300px;
+
+  .card-header {
+    font-size: 13px !important;
+    min-height: 60px;
+
+    .label {
+      vertical-align: text-bottom;
+    }
+  }
+
+  .card-body {
+    font-size: 13px !important;
+    padding: 0;
+
+    .table th {
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 0.5rem 0.5rem;
+    }
+
+    .table td {
+      padding: 0.5rem 0.5rem;
+    }
+  }
+
+  .card-footer {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0.75rem;
+
+    i {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+
+    .btn {
+      font-size: 13px !important;
+      padding: 0.5rem 0.75rem;
+    }
+  }
+}
+
+#kt_photo_modal {
+
+  .modal-dialog {
+    max-width: 37.5vw;
+    max-height: 85vh;
+
+    .card-body {
+      padding: 0.5rem;
+
+      .carousel-inner {
+        border-radius: 4px;
+
+        .carousel-item {
+          min-height: 35vh;
+
+          img {
+            display: flex;
+            margin-inline: auto;
+            max-height: 70vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+#kt_history_modal {
+
+  .modal-dialog {
+    max-height: 85vh;
+
+    .card-body {
+      .col-xl-6 {
+        display: flex;
+        flex-flow: column;
+      }
+
+      .col-sm-12 {
+        display: flex;
+        flex-flow: column;
+      }
+
+      .dataTables_wrapper .dataTable {
+        margin: 0 0 0.5rem 0 !important;
+      }
+
+      .dataTables_length {
+        display: none;
+      }
+
+      .table {
+
+        th {
+          //white-space: nowrap;
+          font-weight: bolder;
+          padding: 0.5rem 0.5rem;
+        }
+
+        td {
+          //white-space: nowrap;
+          font-size: small;
+          padding: 0.5rem 0.25rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-wrap: break-word;
+        }
+      }
+
+      #kt_history_modal_details {
+        flex: auto;
+        white-space: pre-wrap;
+        justify-content: flex-start;
+      }
+
+      .text-muted {
+        text-align: center;
+      }
+
+      .carousel-item {
+        min-height: 50vh;
+
+        img {
+          display: flex;
+          margin-inline: auto;
+          max-height: 70vh;
+        }
+      }
+    }
+  }
+}
+
+#kt_search_modal {
+
+  max-width: 300px;
+
+  .card-header {
+    font-size: 13px !important;
+    min-height: 60px;
+
+    .label {
+      vertical-align: text-bottom;
+    }
+  }
+
+  .card-body {
+    font-size: 13px !important;
+    padding: 0;
+
+    .table th {
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 0.5rem 0.5rem;
+    }
+
+    .table td {
+      padding: 0.5rem 0.5rem;
+    }
+  }
+
+  .card-footer {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0.75rem;
+
+    i {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+
+    .btn {
+      font-size: 13px !important;
+      padding: 0.5rem 0.75rem;
+    }
+  }
+}

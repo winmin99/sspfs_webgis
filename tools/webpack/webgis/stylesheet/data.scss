@@ -1,0 +1,157 @@
+////////////////////////////////////////////////////////////////
+
+#card_storage {
+  box-shadow: none;
+
+  .card-body {
+    .ribbon-target {
+      top: -2.25rem;
+      right: 1rem;
+      box-shadow: none;
+      border-style: solid;
+      border-bottom-style: none;
+      border-color: #EBEDF3;
+      border-width: 1px;
+      padding: 0.5rem;
+
+      .btn {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0.5rem;
+      }
+    }
+
+    .dataTables_wrapper {
+      .row {
+        width: auto;
+        margin: 0 10px;
+      }
+
+      #kt_datatable_btn_group {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+
+      .dataTables_pager {
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+    }
+
+    #kt_datatable_storage {
+      margin: 0 !important;
+
+      thead {
+        th {
+          color: #0078D7;
+          font-weight: bolder;
+          white-space: nowrap;
+          //padding: 1rem 0.75rem;
+          border-bottom-color: transparent;
+          max-width: fit-content;
+        }
+
+        .filter {
+          th {
+            padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+          }
+
+          .datatable-input {
+            font-weight: bolder;
+          }
+        }
+
+        .bootstrap-select > .dropdown-toggle {
+          padding: 0.45rem 1rem;
+          border-radius: 0.28rem;
+        }
+
+        #yadcf-filter-wrapper--kt_datatable_daterange-storage {
+          max-width: min-content;
+
+          .yadcf-filter-wrapper {
+            .yadcf-filter-wrapper-inner {
+              border: none;
+            }
+
+            .yadcf-filter-range-date {
+              border: none;
+            }
+
+            .yadcf-filter-range-date-seperator {
+              margin: 0;
+            }
+
+            input {
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      tr {
+        td {
+          white-space: nowrap;
+          padding: 0.4rem 1.5rem 0.4rem 1rem;
+          margin: 0;
+
+          .dtr-data {
+            white-space: pre-wrap;
+            justify-content: flex-start;
+          }
+        }
+
+        td:first-child {
+          padding-left: 0.5rem !important;
+        }
+
+        // row expand & collapse button
+        td.dtr-control:before {
+          border: none;
+          box-shadow: none;
+          color: #0078D7;
+          background-color: transparent;
+          font-size: larger;
+          font-weight: bolder;
+        }
+      }
+
+      tr.selected td {
+        background-color: #F3F6F933;
+      }
+
+      .text-blue {
+        color: blue;
+        font-weight: bolder;
+      }
+    }
+
+    #daterange {
+      width: 1px !important;
+      max-width: min-content !important;
+    }
+  }
+}
+
+.uppy .uppy-Root {
+  text-align: -webkit-center;
+}
+
+.uppy-size--md {
+
+  .uppy-Dashboard-AddFiles-title {
+    font-size: 1.5rem;
+  }
+
+  .uppy-Dashboard-AddFiles-info {
+    bottom: 15vh;
+    font-size: 1rem;
+  }
+}
+
+.uppy .uppy-Dashboard-note {
+  color: #3F4254;
+  font-size: 1rem;
+  font-weight: 400;
+}

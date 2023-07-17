@@ -1,0 +1,82 @@
+<!--begin::Entry-->
+<div class="d-flex flex-column-fluid">
+  <!--begin::Container-->
+  <div class="container-fluid p-0" id="container-search">
+    <div class="card card-custom" id="card_search_map">
+      <div class="card-body ribbon ribbon-bottom p-0 parent" id="card_body_search_map">
+        <div id="search_map_wrapper">
+          <div id="search_map" class="child"></div>
+        </div>
+        <div id="rvWrapper" class="child">
+          <div id="map-roadview" style="height: 100%;"></div>
+        </div>
+        <div class="ribbon-target bg-white">
+          <a href="javascript:;" class="btn btn-sm btn-outline-info border-0 font-weight-bolder"
+             id="kt_datatable_search">
+            <span class="label label-inline label-danger font-weight-bolder mr-2" hidden></span>
+            <i class="fas fa-search"></i> 검색
+          </a>
+          <a href="javascript:;" class="btn btn-sm btn-outline-danger border-0 font-weight-bolder ml-1"
+             id="kt_datatable_clear">
+            <i class="fas fa-times"></i> 초기화
+          </a>
+          <a href="javascript:;" class="btn btn-sm btn-outline-primary border-0 font-weight-bolder ml-1"
+             id="kt_datatable_map">
+            <i class="fas fa-sort"></i> 지도
+          </a>
+          <div class="dropdown dropdown-inline dropleft ml-1">
+            <a href="#" class="btn btn-sm btn-outline-primary border-0 font-weight-bolder"
+               data-toggle="dropdown" data-offset="0,3">
+              <i class="flaticon-download-1"></i> 출력
+            </a>
+            <div class="dropdown-menu dropdown-menu-sm-right border border-primary">
+              <ul class="navi">
+                <li class="navi-item">
+                  <a class="navi-link active" href="javascript:;" id="kt_datatable_print">
+                    <span class="navi-icon"><i class="flaticon2-printer text-primary"></i></span>
+                    <span class="navi-text">인쇄</span>
+                  </a>
+                </li>
+                <li class="navi-item">
+                  <a class="navi-link" href="javascript:;" id="kt_datatable_excel">
+                    <span class="navi-icon"><i class="flaticon2-file text-success"></i></span>
+                    <span class="navi-text">엑셀 저장</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--begin::Card-->
+    <div class="card card-custom card-fit" id="card_search">
+      <div class="card-body p-0">
+        <!--begin: Datatable-->
+        <table class="table" id="kt_datatable">
+          <thead class="thead-color">
+          <tr>
+            <th></th>
+            <th>번호</th>
+            <th>접수자</th>
+            <th>일자</th>
+            <th>민원인</th>
+            <th>연락처</th>
+            <th>지번 주소</th>
+            <th>도로명 주소</th>
+            <th>접수내용</th>
+            <th>진행상태</th>
+            <th>대행업체</th>
+            <th>민원상세</th>
+            <th><!-- Button1 --></th>
+          </tr>
+          </thead>
+        </table>
+        <!--end: Datatable-->
+      </div>
+      <!--end::Card-->
+    </div>
+  </div>
+  <!--end::Container-->
+</div>
+<!--end::Entry-->

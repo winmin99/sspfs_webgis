@@ -1,0 +1,159 @@
+<!--begin::Chat Panel-->
+<div class="modal fade modal-sticky modal-sticky-top-right" data-backdrop="false" id="kt_search_modal" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--begin::Card-->
+      <div class="card card-custom card-fit m-2">
+        <div class="card-body">
+          <ul class="navi navi-hover navi-active navi-accent py-1">
+            <li class="navi-header font-weight-bolder text-uppercase font-size-md pb-2">문서자료실</li>
+            <li class="navi-item">
+              <a class="navi-link" href="/data/storage" id="navi-data-link-0">
+                <span class="navi-bullet">
+                  <i class="bullet bullet-dot"></i>
+                </span>
+                <span class="navi-text">&nbsp;업로드 및 다운로드</span>
+              </a>
+            </li>
+          </ul>
+          <div class="separator separator-dashed my-1"></div>
+          <ul class="navi navi-hover navi-active navi-accent py-1">
+            <li class="navi-header font-weight-bolder text-uppercase font-size-md pb-2">가압장</li>
+            <li class="navi-item" data-target="#serv_pres_modal" data-toggle="modal">
+              <a class="navi-link" href="javascript:;" style="white-space: nowrap">
+                <span class="navi-bullet">
+                <i class="bullet bullet-dot"></i>
+                </span>
+                <span class="navi-text">&nbsp;가압장 관리업체 현황</span>
+              </a>
+            </li>
+          </ul>
+          <div class="separator separator-dashed my-1"></div>
+          <ul class="navi navi-hover navi-active navi-accent py-1">
+            <li class="navi-header font-weight-bolder text-uppercase font-size-md pb-2">{{role_ko}}관로 조건검색</li>
+            <li class="navi-item p-5">
+              <div class="accordion accordion-toggle-arrow" id="accordionExample5">
+                <div class="card">
+                  <div class="card-header" id="headingTwo5" style="min-height: 0;">
+                    <div class="card-title collapsed font-size-sm" data-toggle="collapse" data-target="#collapseTwo5">
+                      <i class="fas fa-calendar-alt"></i> 설치일자
+                    </div>
+                  </div>
+                  <div id="collapseTwo5" class="collapse" data-parent="#accordionExample5">
+                    <div class="card-body" id="viw_wtl_pipe_lm_filter_ist_ymd">
+                      <ul class="navi navi-hover navi-active navi-accent">
+                        <li class="navi-item">
+                          <a href="javascript:;" class="navi-link">
+                            <span class="navi-text text-danger font-weight-bolder" title="-1">&nbsp;초기화</span>
+                          </a>
+                        </li>
+                        <li class="navi-item">
+                          <a href="javascript:;" class="navi-link">
+                            <span class="navi-text" title="5">&nbsp;5 년 이상</span>
+                          </a>
+                        </li>
+                        <li class="navi-item">
+                          <a href="javascript:;" class="navi-link">
+                            <span class="navi-text" title="10">&nbsp;10 년 이상</span>
+                          </a>
+                        </li>
+                        <li class="navi-item">
+                          <a href="javascript:;" class="navi-link">
+                            <span class="navi-text" title="15">&nbsp;15 년 이상</span>
+                          </a>
+                        </li>
+                        <li class="navi-item">
+                          <a href="javascript:;" class="navi-link">
+                            <span class="navi-text" title="20">&nbsp;20 년 이상</span>
+                          </a>
+                        </li>
+                      </ul>
+                      <form class="form m-2 pl-5 pr-5">
+                        <label class="text-primary font-weight-bolder">직접 지정...</label>
+                        <div class="form-group form-group-sm row mb-2">
+                          <div class="col-6 pl-0 pr-1">
+                            <input class="form-control form-control-sm kt_inputmask_range" name="begin"
+                                   placeholder="시작 연도"
+                                   type="text">
+                          </div>
+                          <div class="col-6 pl-1 pr-0">
+                            <input class="form-control form-control-sm kt_inputmask_range" name="end" placeholder="끝 연도"
+                                   type="text">
+                          </div>
+                        </div>
+                        <div class="form-group form-group-sm row mb-0">
+                          <button type="button" class="btn btn-sm btn-block btn-light-primary font-weight-bolder p-2">
+                            적용
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree5" style="min-height: 0;">
+                    <div class="card-title collapsed font-size-sm" data-toggle="collapse" data-target="#collapseThree5">
+                      <i class="fas fa-ruler"></i> 구경
+                    </div>
+                  </div>
+                  <div id="collapseThree5" class="collapse" data-parent="#accordionExample5">
+                    <div class="card-body" id="viw_wtl_pipe_lm_filter_pip_dip">
+                      <ul class="navi navi-hover navi-active navi-accent">
+                        <li class="navi-item">
+                          <a href="javascript:;" class="navi-link">
+                            <span class="navi-text text-danger font-weight-bolder" title="-1">&nbsp;초기화</span>
+                          </a>
+                        </li>
+                        <li class="navi-item">
+                          <a href="javascript:;" class="navi-link">
+                            <span class="navi-text" title="50">&nbsp;50 mm 이상</span>
+                          </a>
+                        </li>
+                        <li class="navi-item">
+                          <a href="javascript:;" class="navi-link">
+                            <span class="navi-text" title="100">&nbsp;100 mm 이상</span>
+                          </a>
+                        </li>
+                        <li class="navi-item">
+                          <a href="javascript:;" class="navi-link">
+                            <span class="navi-text" title="150">&nbsp;150 mm 이상</span>
+                          </a>
+                        </li>
+                        <li class="navi-item">
+                          <a href="javascript:;" class="navi-link">
+                            <span class="navi-text" title="200">&nbsp;200 mm 이상</span>
+                          </a>
+                        </li>
+                      </ul>
+                      <form class="form m-2 pl-5 pr-5">
+                        <label class="text-primary font-weight-bolder">직접 지정...</label>
+                        <div class="form-group form-group-sm row mb-2">
+                          <div class="col-6 pl-0 pr-1">
+                            <input class="form-control form-control-sm kt_inputmask_range" name="begin"
+                                   placeholder="최소 구경"
+                                   type="text">
+                          </div>
+                          <div class="col-6 pl-1 pr-0">
+                            <input class="form-control form-control-sm kt_inputmask_range" name="end" placeholder="최대 구경"
+                                   type="text">
+                          </div>
+                        </div>
+                        <div class="form-group form-group-sm row mb-0">
+                          <button type="button" class="btn btn-sm btn-block btn-light-primary font-weight-bolder p-2">
+                            적용
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--end::Card-->
+    </div>
+  </div>
+</div>
+<!--end::Chat Panel-->
