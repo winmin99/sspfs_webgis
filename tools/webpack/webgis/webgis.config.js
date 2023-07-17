@@ -4,28 +4,8 @@ const distPath = path.resolve(__dirname, '../../..', '.build');
 
 const webpackEntries = {
   'js/maps.bundle': [
-    '@webgis/config/yeongju_a.js',
+    '@webgis/config/bonghwa.js',
     '@webgis/javascript/maps/index.js',
-  ],
-  'js/serv.register': [
-    '@webgis/config/yeongju_a.js',
-    '@webgis/javascript/service/register/kakaoMap.js',
-    '@webgis/javascript/service/register/index.js',
-  ],
-  'js/serv.search': [
-    '@webgis/config/yeongju_a.js',
-    '@webgis/javascript/service/search/kakaoMap.js',
-    '@webgis/javascript/service/search/index.js',
-  ],
-  'js/data.storage': [
-    '@webgis/config/index.js',
-    '@webgis/javascript/data/storage.js',
-  ],
-  'js/serv.pres': [
-    '@webgis/javascript/service/pres-manage.js',
-  ],
-  'js/serv.schedule': [
-    '@webgis/javascript/service/schedule.js',
   ],
   'css/custom.bundle': [
     '@webgis/stylesheet/_init.scss',
