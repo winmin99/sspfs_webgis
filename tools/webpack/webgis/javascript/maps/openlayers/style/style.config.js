@@ -127,6 +127,27 @@ export default {
         width: 1,
       },
     },
+    '농로': {
+      stroke: {
+        color: '#0045ff',
+        dash: null,
+        width: 1.5,
+      },
+    },
+    '마을진입로': {
+      stroke: {
+        color: '#00b0ff',
+        dash: null,
+        width: 1.5,
+      },
+    },
+    '세천': {
+      stroke: {
+        color: '#18ffff',
+        dash: null,
+        width: 1.5,
+      },
+    }
   },
   point: {
     'n3p_f0020000': {
@@ -820,6 +841,34 @@ export default {
         opacity: 1,
         scale: 1,
         src: 'SB410',
+      },
+      text: {
+        color: null,
+        font: null,
+        offsetY: null,
+        stroke: null,
+        width: null,
+      },
+    },
+    '소교량': {
+      image: {
+        opacity: 1,
+        scale: 1,
+        src: 'SA122',
+      },
+      text: {
+        color: null,
+        font: null,
+        offsetY: null,
+        stroke: null,
+        width: null,
+      },
+    },
+    '낙차공': {
+      image: {
+        opacity: 1,
+        scale: 0.6,
+        src: 'EP002',
       },
       text: {
         color: null,

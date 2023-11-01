@@ -1,15 +1,18 @@
 import postgresql from '../middlewares/postgresql';
-import mysql from '../middlewares/mysql';
+// import mysql from '../middlewares/mysql';
 import moment from 'moment';
 
 moment.locale('ko');
 
 export default {
+  test(req, res, next) {
+  },
+
   search(req, res, next) {
     postgresql.executeQuery(
       `SELECT *
        FROM viw_search_tb
-       WHERE (fac_nam LIKE $1 OR cname LIKE $1 OR ftr_idn=$2) 
+       WHERE (fac_nam LIKE $1 OR cname LIKE $1 OR ftr_idn = $2)
          AND (role_name = $3)
        ORDER BY cname, (CASE WHEN fac_nam IS NULL OR fac_nam = '' THEN 1 ELSE 0 END), fac_nam ASC;`,
       [`%${req.query['query']}%`, req.query['query'], '상수'], // TODO: '상수' Role 처리
@@ -25,7 +28,9 @@ export default {
 
     if (table && !section) {
       postgresql.executeQuery(
-        `SELECT '${table}' AS "table", '${column}' AS "column", ${column} AS "section" FROM ${table} ORDER BY ${column} ASC;`,
+        `SELECT '${table}' AS "table", '${column}' AS "column", ${column} AS "section"
+         FROM ${table}
+         ORDER BY ${column} ASC;`,
         [],
       ).then(result => {
         res.status(200).json(result);
@@ -34,7 +39,9 @@ export default {
 
     if (table && section) {
       postgresql.executeQuery(
-        `SELECT st_asgeojson(${table}.geom) AS coordinate FROM ${table} WHERE ${column}='${section}';`,
+        `SELECT st_asgeojson(${table}.geom) AS coordinate
+         FROM ${table}
+         WHERE ${column} = '${section}';`,
         [],
       ).then(result => {
         res.status(200).json(result);
@@ -43,7 +50,9 @@ export default {
   },
 
   info(req, res, next) {
-    postgresql.executeQuery(`SELECT * FROM ${req.query['table']} WHERE 관리번호=$1;`,
+    postgresql.executeQuery(`SELECT *
+                             FROM ${req.query['table']}
+                             WHERE 관리번호 = $1;`,
       [req.query['id']],
     ).then(result => {
       res.status(200).json(result);
@@ -51,25 +60,41 @@ export default {
   },
 
   infoCheck(req, res, next) {
-    mysql.executeQuery(`SELECT 
-       (SELECT EXISTS(SELECT 관리번호)
-        FROM ${req.query['table_image']} AS t1
-        WHERE t1.관리번호 = ${req.query['id']}
-          AND t1.시설물구분 = "${req.query['layer']}"
-        LIMIT 1) AS 'photo',
-       (SELECT EXISTS(SELECT 관리번호)
-        FROM ${req.query['table_history']} AS t2
-        WHERE t2.관리번호 = ${req.query['id']}
-          AND t2.시설물구분 = "${req.query['layer']}"
-        LIMIT 1) AS 'history'`,
-    [],
+    postgresql.executeQuery(
+      // `SELECT
+      //  (SELECT EXISTS(SELECT 현황사진)
+      //   FROM ${req.query['table_image']} AS t1
+      //   WHERE t1.관리번호 = ${req.query['id']}
+      //     AND t1.시설물구분 = "${req.query['layer']}"
+      //   LIMIT 1) AS "photo",
+      //  (SELECT EXISTS(SELECT 관리번호)
+      //   FROM ${req.query['table_history']} AS t2
+      //   WHERE t2.관리번호 = ${req.query['id']}
+      //     AND t2.시설물구분 = "${req.query['layer']}"
+      //   LIMIT 1) AS "history"`,
+      `SELECT CASE
+                  WHEN
+                      (SELECT EXISTS(SELECT 현황사진)
+                       FROM ${req.query['table_image']} AS t1
+                       WHERE t1.관리번호 = '${req.query['id']}'
+                         AND t1.레이어 = '${req.query['layer']}'
+                      LIMIT 1) IS TRUE THEN 1
+      END
+      AS "photo"`,
+      [],
     ).then(result => {
       res.status(200).json(result);
     }).catch(next);
   },
 
   infoPhoto(req, res, next) {
-    mysql.executeQuery(`SELECT * FROM ${req.query['table']} WHERE 시설물구분="${req.query['layer']}" AND 관리번호=${req.query['id']} ORDER BY 사진일련번호 ASC;`,
+    postgresql.executeQuery(
+      // `SELECT * FROM ${req.query['table']} WHERE 시설물구분="${req.query['layer']}" AND 관리번호=${req.query['id']} ORDER BY 현황사진 ASC;`,
+      `SELECT (JSONB_ARRAY_ELEMENTS(현황사진)) ->> 'url' AS url, (JSONB_ARRAY_ELEMENTS(현황사진)) ->> 'name' AS img_name
+       FROM ${req.query['table']}
+       WHERE "레이어" = '${req.query['layer']}'
+         AND "관리번호" = '${req.query['id']}'
+       ORDER BY "현황사진" ASC;`,
       [],
     ).then(result => {
       res.status(200).json(result);
@@ -77,7 +102,11 @@ export default {
   },
 
   infoHistory(req, res, next) {
-    mysql.executeQuery(`SELECT * FROM ${req.query['table']} WHERE 시설물구분="${req.query['layer']}" AND 관리번호=${req.query['id']} ORDER BY 유지보수일련번호 DESC;`,
+    postgresql.executeQuery(`SELECT *
+                             FROM ${req.query['table']}
+                             WHERE 시설물구분 = "${req.query['layer']}"
+                               AND 관리번호 = ${req.query['id']}
+                             ORDER BY 유지보수일련번호 DESC;`,
       [],
     ).then(result => {
       res.status(200).json(result);

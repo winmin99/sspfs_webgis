@@ -75,7 +75,9 @@ export class SelectInteraction extends Select {
           case 'MultiLineString': {
             return selectLineStyle;
           }
-          case 'Point':
+          case 'Point': {
+            // return selectPointStyle;
+          }
           case 'MultiPoint': {
             let selectStyle = feature.get('spi_id') ? createVectorSpiStyle(feature) : createVectorStyle(feature);
             return selectStyle.clone();

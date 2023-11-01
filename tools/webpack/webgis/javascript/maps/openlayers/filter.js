@@ -27,6 +27,7 @@ const featureNameFilter = new Set([
   '방향각',
   '회전방향',
   'EDDATE',
+  '현황사진',
 ]);
 
 const featureDateFilter = new Set([

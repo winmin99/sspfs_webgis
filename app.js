@@ -1,5 +1,4 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
+import 'dotenv/config';
 import createError from 'http-errors';
 import express from 'express';
 import path from 'path';
@@ -20,6 +19,7 @@ import routes from './routes/index';
 
 const app = express();
 
+
 // view engine setup
 /**
  * @default ./views/layouts a Handlebars template with a {{{body}}} placeholder.
@@ -31,9 +31,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', engine({ extname: '.html' }));
 
-app.use(helmet({
-  contentSecurityPolicy: false,
-}));
+app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -64,10 +62,7 @@ const sessionOptions = {
 app.use(session(sessionOptions));
 
 app.use(rateLimiter);
-app.use(cors({
-  origin: true,
-  credentials: true,
-}));
+app.use(cors());
 app.use(passport.initialize({}));
 app.use(passport.session(false));
 app.use(express.static(path.join(__dirname, 'public')));

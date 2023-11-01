@@ -6,6 +6,7 @@
       <script value="buildServer" />
     </scripts>
     <node-interpreter value="project" />
+    <package-manager value="C:\Users\User\IdeaProjects\sspfs47920\.yarn\releases\yarn-3.6.1.cjs" />
     <envs />
     <method v="2" />
   </configuration>

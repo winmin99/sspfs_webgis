@@ -681,4 +681,82 @@ export default {
       '시설물구분',
     ],
   },
+  view_manage_line: {
+    label: null,
+    maxZ: 21,
+    minZ: 9,
+    propertyName: [
+      'geom',
+      '레이어',
+      '관리번호',
+      // '관라벨',
+      // '시설물구분',
+    ],
+  },
+  view_manage_point: {
+    label: null,
+    maxZ: 21,
+    minZ: 9,
+    propertyName: [
+      'geom',
+      '레이어',
+      '관리번호',
+      // '대장작성일',
+    ],
+  },
+  view_manage_a: {
+    label: null,
+    maxZ: 21,
+    minZ: 9,
+    propertyName: [
+      'geom',
+      '레이어',
+      '관리번호',
+      // '대장작성일',
+    ],
+  },
+  view_manage_b: {
+    label: null,
+    maxZ: 21,
+    minZ: 9,
+    propertyName: [
+      'geom',
+      '레이어',
+      '관리번호',
+      // '대장작성일',
+    ],
+  },
+  view_manage_d: {
+    label: null,
+    maxZ: 21,
+    minZ: 9,
+    propertyName: [
+      'geom',
+      '레이어',
+      '관리번호',
+      // '대장작성일',
+    ],
+  },
+  view_manage_e: {
+    label: null,
+    maxZ: 21,
+    minZ: 9,
+    propertyName: [
+      'geom',
+      '레이어',
+      '관리번호',
+      // '대장작성일',
+    ],
+  },
+  view_manage_f: {
+    label: null,
+    maxZ: 21,
+    minZ: 9,
+    propertyName: [
+      'geom',
+      '레이어',
+      '관리번호',
+      // '대장작성일',
+    ],
+  },
 };

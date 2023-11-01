@@ -30,7 +30,8 @@ function createVectorLayer(key) {
     maxZoom: property[key].maxZ,
     minZoom: property[key].minZ,
     source: key.includes('filter') ? new VectorSource() : createVectorSource(key),
-    style: createVectorStyle,
+    // style: createVectorStyle,
+    style: createVectorStyleTemp,
   });
   if (!layerSelectFilter.has(key)) {
     vectorLayer.set('selectable', true, true);
@@ -65,6 +66,18 @@ function createVectorSourceRequestUrl(key) {
     })
     .join('&');
   return `${window.webgis.geoserverHost}/geoserver/${window.webgis.workspace}/wfs?${requestUrl}`;
+}
+
+export function createVectorStyleTemp(feature) {
+  const layer = (feature.get('레이어') || feature.get('layer') || featureId || '').trim();
+  switch (feature.getGeometry().getType()) {
+    case 'MultiLineString': {
+    return lineStyleMap[layer]
+    }
+    case 'Point' : {
+      return pointStyleMap[layer]
+    }
+  }
 }
 
 export function createVectorStyle(feature) {

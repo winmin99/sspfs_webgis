@@ -16,25 +16,25 @@ const FeatureFilter = function () {
   let _searchModal;
   let _isActive = false;
 
-  function _init() {
-    document.getElementById('btn-search').addEventListener('mousedown', event => {
-      event.preventDefault();
-      _isActive = !_isActive;
-      event.target.classList.toggle('active', _isActive);
-      if (_isActive) {
-        _searchModal.showModal();
-      } else {
-        _searchModal.hideModal();
-      }
-    }, false);
-
-    _requestUrl = `${window.webgis.geoserverHost}/geoserver/${window.webgis.workspace}/wfs`;
-    _requestDefaults = {
-      featurePrefix: window.webgis.workspace,
-      outputFormat: 'application/json',
-      srsName: 'EPSG:5187',
-    };
-  }
+  // function _init() {
+  //   document.getElementById('btn-search').addEventListener('mousedown', event => {
+  //     event.preventDefault();
+  //     _isActive = !_isActive;
+  //     event.target.classList.toggle('active', _isActive);
+  //     if (_isActive) {
+  //       _searchModal.showModal();
+  //     } else {
+  //       _searchModal.hideModal();
+  //     }
+  //   }, false);
+  //
+  //   _requestUrl = `${window.webgis.geoserverHost}/geoserver/${window.webgis.workspace}/wfs`;
+  //   _requestDefaults = {
+  //     featurePrefix: window.webgis.workspace,
+  //     outputFormat: 'application/json',
+  //     srsName: 'EPSG:5187',
+  //   };
+  // }
 
   /**
    * Common filter functions
@@ -209,7 +209,7 @@ const FeatureFilter = function () {
       _vectorLayer = layer;
       _searchModal = new SearchModal('#kt_search_modal');
 
-      _init();
+      // _init();
       _initPipeSearch();
     },
   };

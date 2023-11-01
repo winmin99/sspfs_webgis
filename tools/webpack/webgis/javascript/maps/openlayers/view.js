@@ -18,6 +18,7 @@ const view = new View({
     localStorage.longitude || window.webgis.center.longitude,
     localStorage.latitude || window.webgis.center.latitude,
   ], projection),
+  // maxZoom: 13.3,
   zoom: base,
   constrainResolution: false,
   constrainRotation: false,
