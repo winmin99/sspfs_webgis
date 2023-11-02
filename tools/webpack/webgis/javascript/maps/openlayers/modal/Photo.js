@@ -1,5 +1,5 @@
-import { default as ModalOverlay } from './Modal';
-import { default as fetchWorker } from '../worker/fetch.wrapper';
+import {default as ModalOverlay} from './Modal';
+import {default as fetchWorker} from '../worker/fetch.wrapper';
 
 export default class PhotoModal extends ModalOverlay {
 
@@ -35,13 +35,42 @@ export default class PhotoModal extends ModalOverlay {
     this.setFeature(feature);
 
     let that = this;
+    // let _layer = ''
+    // switch (that.getFeature('layer')) {
+    //   case "소교량": {
+    //     _layer = 'view_manage_a'
+    //     break;
+    //   }
+    //   case "세천": {
+    //     _layer = 'view_manage_b'
+    //     break;
+    //   }
+    //   case "낙차공": {
+    //     _layer = 'view_manage_d'
+    //     break;
+    //   }
+    //   case "농로": {
+    //     _layer = 'view_manage_e'
+    //     break;
+    //   }
+    //   case "마을진입로": {
+    //     _layer = 'view_manage_f'
+    //     break;
+    //   }
+    // }
+
     let _layer = that.getFeature('layer');
+    let _layer2 = window.webgis.table.photo
+    console.log(_layer,_layer2)
     let _layerSub = that.getFeature('layerSub');
-    _layerSub = _layerSub.match(/(.*받이)/g) !== null ? '물받이' : _layerSub;
+    // _layerSub = _layerSub.match(/(.*받이)/g) !== null ? '물받이' : _layerSub;
     let _id = that.getFeature('id');
     return new Promise((resolve, reject) => {
       fetchWorker.fetch(`${window.webgis.role}/info/photo`, {
-        table: _layer === '보수공사' ? window.webgis.table.repairPhoto : window.webgis.table.photo,
+        // table: _layer === '보수공사' ? window.webgis.table.repairPhoto : window.webgis.table.photo,
+        // table: window.webgis.table.photo[_layer],
+        // table: window.webgis.table.photo._layer,
+        table: _layer2.get(_layer),
         layer: _layerSub,
         id: _id,
       }, 'image/jpg')
@@ -60,6 +89,8 @@ export default class PhotoModal extends ModalOverlay {
       if (result?.length > 0) {
         that['.card-title h3'].html(feature.get(`${_layer}명`) ? feature.get(`${_layer}명`) : _layer);
         that.updateCarousel(result);
+        // that.displayImagesInPopup(result);
+        // console.log(result)
         return true;
       } else return false;
     }

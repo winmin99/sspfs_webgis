@@ -42,17 +42,25 @@ export default class ModalOverlay {
   hideModal() {
     this._modalEl.modal('hide');
   }
-
+//
   updateCarousel(data) {
     for (let i = 0, len = data.length; i < len; i++) {
-      const title = `사진${data[i]['사진일련번호']}:&nbsp;${data[i]['사진명칭']}`;
-      const imageBlob = data[i]['사진'];
-      this._imageBlobSet.add(imageBlob);
+      const title = `${data[i]['img_name']}`;
+      const imageBlob = data[i]['url'];
+      let parts = imageBlob.split("_"); // Split the string into an array using "_" as delimiter
+      let lastPart = parts[parts.length - 1]; // Get the last element of the array
+      let fileName = lastPart.replace(".jpg", ""); // Remove the ".jpg" extension from the last part
+      const imagesHtml = `<h2>${fileName}</h2><img src="${imageBlob}" style="width: 100%;" alt="현재 작업 중입니다">`;
+
       if (i === 0) {
         this['.carousel-item img'].attr('src', imageBlob);
         this['.carousel-item button'].html(title);
         this['.carousel-item button'].on('mousedown', () => {
-          window.open(imageBlob, 'Popup', 'location, resizable');
+          // window.open('about:blank', 'Popup', 'location, resizable');
+          const popup = window.open('about:blank', 'Popup', 'location, resizable');
+          if (popup) {
+            popup.document.body.innerHTML = imagesHtml;
+          }
         });
         this['.carousel-item'].addClass('active');
       } else {
@@ -61,7 +69,10 @@ export default class ModalOverlay {
         _node.find('img').attr('src', imageBlob);
         _node.find('div > button').html(title);
         _node.find('div > button').on('mousedown', () => {
-          window.open(imageBlob, 'Popup', 'location, resizable');
+          const popup = window.open('about:blank', 'Popup', 'location, resizable');
+          if (popup) {
+            popup.document.body.innerHTML = imagesHtml;
+          }
         });
         this['.carousel-inner'].append(_node);
       }

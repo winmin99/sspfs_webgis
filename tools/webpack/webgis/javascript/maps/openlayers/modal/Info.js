@@ -78,7 +78,77 @@ export default class InfoModal extends ModalOverlay {
         if (key === '') {
           tableRow = '';
         } else {
-          tableRow += `<tr class="tr-striped"><th scope="row">${key}</th><td>${value || '<span class="text-muted">없음<small>&nbsp;null</small></span>'}</td></tr>`;
+            tableRow = `
+<table>
+<thead>1.시설 현황</thead>
+<tr>
+<th>시설 명칭</th>
+<td>${response[0]['시설명칭']}</td>
+<th>관리자</th>
+<td>${response[0]['관리자']}</td>
+<th>대장작성일</th>
+<td>${response[0]['대장작성일']}</td>
+</tr>
+<tr>
+<th>소유자/점유자<br>또는 관리인</th>
+<td>${response[0]['소유자']=== null ? '' : response[0]['소유자']}</td>
+<th>위험시설<br>지정일</th>
+<td>${response[0]['위험시설지정일']=== null ? '' : response[0]['위험시설지정일']}</td>
+<th>위험시설 지정<br>고시번호</th>
+<td>${response[0]['위험시설지정고시번호']=== null ? '' : response[0]['위험시설지정고시번호']}</td>
+</tr>
+<tr>
+<th>위치</th>
+<td colspan="5">${response[0]['위치']}</td>
+</tr>
+<tr>
+<!--<th>폭</th>-->
+<!--<td>${response[0]["제원_폭"]=== undefined ? '' : response[0]['제원_폭']}</td>-->
+<th>평균 폭</th>
+<td>${response[0]["제원_평균폭"]=== undefined ? '' : response[0]['제원_평균폭']}</td>
+<th>연장</th>
+<td>${response[0]['제원_연장']}</td>
+<th>높이</th>
+<td>${response[0]['제원_높이']=== undefined ? '' : response[0]['제원_높이']}</td>
+</tr>
+<tr>
+<th>수혜구역</th>
+<td>${response[0]['수혜구역']=== null ? '' : response[0]['수혜구역']}</td>
+</tr>
+<tr>
+<th>시설부속물_수량</th>
+<td>${response[0]['시설부속물_총수량']=== null ? '' : response[0]['시설부속물_총수량']}</td>
+<th>시설부속물_유형</th>
+<td>${response[0]['시설부속물_유형별'] === null ? '' : response[0]['시설부속물_유형별']}</td>
+</tr>
+<tr>
+<th>그 밖의 사항</th>
+<td>${response[0]['그밖의사항'] === null ? '' : response[0]['그밖의사항']}</td>
+</tr>
+</table>
+<br>
+<br>
+<table>
+<thead>2.시설 정비 현황</thead>
+<tr>
+<th>구분</th>
+<th>사업량_연장</th>
+<th>사업량_폭</th>
+<th>사업비</th>
+<th>착공일</th>
+<th>준공일</th>
+<th>시설부속물</th>
+</tr>
+<tr>
+<th>전체계획</th>
+<td>${response[0]['전체계획_사업량_연장'] === null ? '' : response[0]['전체계획_사업량_연장']}</td>
+<td>${response[0]['전체계획_사업량_폭'] === null ? '' : response[0]['전체계획_사업량_폭']}</td>
+<td>${response[0]['전체계획_사업비'] === null ? '' : response[0]['전체계획_사업비']}</td>
+<td>${response[0]['전체계획_착공일'] === null ? '' : response[0]['전체계획_착공일']}</td>
+<td>${response[0]['전체계획_준공일'] === null ? '' : response[0]['전체계획_준공일']}</td>
+<td>${response[0]['전체계획_시설부속물'] === null ? '' : response[0]['전체계획_시설부속물']}</td>
+</tr>
+</table>`;
         }
         return value;
       });
@@ -105,11 +175,13 @@ export default class InfoModal extends ModalOverlay {
   checkPhotoAndHistory() {
     let that = this;
     let _layer = that.getFeature('layer');
-    let _layerSub = that.getFeature('layerSub');
+    console.log('check layer: ', _layer)
+    let _layer2 = window.webgis.table.photo
+    let _layerSub = that.getFeature('layer');
     _layerSub = _layerSub.match(/(.*받이)/g) !== null ? '물받이' : _layerSub;
     let _id = that.getFeature('id');
     fetchWorker.fetch(`${window.webgis.role}/info/check`, {
-      table_image: _layer === '보수공사' ? window.webgis.table.repairPhoto : window.webgis.table.photo,
+      table_image: _layer === '보수공사' ? window.webgis.table.repairPhoto : _layer2.get(_layer),
       table_history: window.webgis.table.maintenance,
       layer: _layerSub,
       id: _id,
