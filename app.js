@@ -16,6 +16,7 @@ import passport from 'passport';
 import fs from 'fs';
 import passportSetup from './middlewares/passport/index';
 import routes from './routes/index';
+import compression from 'compression'
 
 const app = express();
 
@@ -30,8 +31,10 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', engine({ extname: '.html' }));
-
-app.use(helmet());
+app.use(compression());
+app.use(helmet({
+  contentSecurityPolicy: false,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -62,7 +65,10 @@ const sessionOptions = {
 app.use(session(sessionOptions));
 
 app.use(rateLimiter);
-app.use(cors());
+app.use(cors({
+  origin: true,
+  credentials: true,
+}));
 app.use(passport.initialize({}));
 app.use(passport.session(false));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -77,6 +83,9 @@ passportSetup(passport);
 const router = express.Router();
 routes(router, passport);
 app.use('/', router);
+app.get("/login", bodyParser.urlencoded({extended: false}),(req, res) => {
+  res.render("login.html");
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

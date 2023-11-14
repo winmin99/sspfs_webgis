@@ -15,6 +15,7 @@ import {
   onWindowLoad,
 } from './event';
 import { FileExport } from './file';
+import {onClickOverlay} from "./modal/PdfModal";
 
 const vectorLayer = new Vector();
 vectorLayer.toggleLayers(window.webgis.table.vector);
@@ -44,6 +45,8 @@ map.addOverlay(hoverOverlay);
 const selectInteraction = new SelectInteraction({ map: map });
 
 map.addInteraction(selectInteraction);
+
+selectInteraction.on('select', onClickOverlay);
 
 // const fileImport = new FileImport({ map, view });
 const fileExport = new FileExport({ map, view, vectorLayer });

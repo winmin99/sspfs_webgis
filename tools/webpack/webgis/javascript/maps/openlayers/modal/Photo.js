@@ -35,29 +35,6 @@ export default class PhotoModal extends ModalOverlay {
     this.setFeature(feature);
 
     let that = this;
-    // let _layer = ''
-    // switch (that.getFeature('layer')) {
-    //   case "소교량": {
-    //     _layer = 'view_manage_a'
-    //     break;
-    //   }
-    //   case "세천": {
-    //     _layer = 'view_manage_b'
-    //     break;
-    //   }
-    //   case "낙차공": {
-    //     _layer = 'view_manage_d'
-    //     break;
-    //   }
-    //   case "농로": {
-    //     _layer = 'view_manage_e'
-    //     break;
-    //   }
-    //   case "마을진입로": {
-    //     _layer = 'view_manage_f'
-    //     break;
-    //   }
-    // }
 
     let _layer = that.getFeature('layer');
     let _layer2 = window.webgis.table.photo

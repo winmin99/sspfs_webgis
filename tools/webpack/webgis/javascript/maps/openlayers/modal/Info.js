@@ -2,9 +2,11 @@ import { getCenter } from 'ol/extent';
 import { default as ModalOverlay } from './Modal';
 import { default as HistoryModal } from './History';
 import { default as PhotoModal } from './Photo';
+import { default as PdfModal } from './PdfModal';
 import { default as fetchWorker } from '../worker/fetch.wrapper';
 import { featureDateFilter, featureNameFilter, unitFilter } from '../filter';
 import { view } from '../view';
+import {selectInteraction} from "../map";
 
 export default class InfoModal extends ModalOverlay {
 
@@ -243,3 +245,4 @@ export default class InfoModal extends ModalOverlay {
     this._interaction = interaction;
   }
 }
+
