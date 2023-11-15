@@ -182,3 +182,13 @@
     }
   }
 }
+.btn-style{
+  border-radius: 5px;
+  border-color: #f7f5f0;
+  background-color: white;
+}
+
+.btn-style:hover{
+  background-color: skyblue;
+  transition: 0.7s;
+}

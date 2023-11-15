@@ -62,6 +62,17 @@ function onClickTerrainMapButton(event) {
   }
 }
 
+function onClickGeoMapButton(event) {
+  event.preventDefault();
+  if (event.target.classList.contains('active')) {
+    this.removeOverlayMapTypeId(kakao.maps.MapTypeId.USE_DISTRICT);
+    event.target.classList.remove('active');
+  } else {
+    this.addOverlayMapTypeId(kakao.maps.MapTypeId.USE_DISTRICT);
+    event.target.classList.add('active');
+  }
+}
+
 /**
  * @requires Set .bind(map) when calling this function
  */
@@ -84,4 +95,5 @@ export {
   onClickTerrainMapButton,
   onWindowResize,
   coordinateToLatLng,
+  onClickGeoMapButton,
 };
