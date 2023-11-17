@@ -63,8 +63,8 @@ function onPassportLocalSignIn(req, username, password, done) {
         .then(function (isMatch) {
           if (isMatch) {
             return done(null, {
-              UserName: `${signIn['UserLastName']}${signIn['UserFirstName']}`,
-              LoginName: signIn['LoginName'],
+              // UserName: `${signIn['UserLastName']}${signIn['UserFirstName']}`,
+              // LoginName: signIn['LoginName'],
               CompanyName: signIn['CompanyName'],
               RoleName: signIn['RoleName'],
               CompanyWTL: signIn['CompanyWTL'],

@@ -224,16 +224,18 @@
         <div class="inner"></div>
       </div>
 
-      <div class="topbar-item">
+      <div class="topbar-item" id="loginButton">
 <!--        <a href="http://localhost:3000/login">로그인</a>-->
         <!--begin::Toggle-->
-        <a href="http://localhost:3000/login"
-                class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-lg"
-
-               >
-          로그인
+        {{#if isAuthenticated}}
+        <a href="http://192.168.0.85:3000/logout" class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-lg">
+          로그아웃
         </a>
-
+        {{else}}
+        <a href="http://192.168.0.85:3000/logout" class="btn btn-sm font-weight-bolder btn-text-light btn-hover-bg-light btn-hover-text-primary ml-2 px-2 py-2 font-size-lg">
+          로그아웃
+        </a>
+        {{/if}}
 <!--        &lt;!&ndash;end::Toggle&ndash;&gt;-->
 
 <!--        &lt;!&ndash;begin::Dropdown&ndash;&gt;-->

@@ -36,20 +36,28 @@
              data-toggle="tooltip" title="화면 가운데로 이동" data-placement="auto">
             <i class="fas fa-map-marker-alt icon-md"></i>
           </a>
-          <button href="javascript:;" class="btn btn-outline-secondary btn-hover-primary btn-md font-weight-bolder"
-             id="btn_export"
-             data-toggle="tooltip" title="내보내기" data-placement="auto">
-            내보내기
-          </button>
+<!--          <button href="javascript:;" class="btn btn-outline-secondary btn-hover-primary btn-md font-weight-bolder"-->
+<!--             id="btn_export"-->
+<!--             data-toggle="tooltip" title="현장조사서" data-placement="auto">-->
+<!--            현장조사서-->
+<!--          </button>-->
           <div class="btn-group" role="group">
-            <button href="javascript:;" class="btn disabled btn-outline-secondary btn-hover-secondary btn-md font-weight-bolder"
-               id="btn_info_modal">
-              <i class="far fa-file-alt icon-md"></i> 내보내기
+
+            <button href="javascript:;" class="btn-style" id="pdfmodal">
+              <i class="far fa-file-alt icon-md"></i> 현장조사서
             </button>
-            <a href="javascript:;" class="btn disabled btn-outline-secondary btn-hover-secondary btn-md font-weight-bolder"
-               id="btn_history_modal">
-              <i class="far fa-file-alt icon-md"></i> 보수내역
-            </a>
+            <button href="javascript:;" class="btn-style"
+                    data-toggle="modal" data-target="#serv_sche_modal">
+              <i class="far fa-file-alt icon-md"></i> 위험도평가
+            </button>
+            <button href="javascript:;" class="btn-style"
+                    id="btn_info3_modal">
+              <i class="far fa-file-alt icon-md"></i> 관리대장
+            </button>
+<!--            <a href="javascript:;" class="btn disabled btn-outline-secondary btn-hover-secondary btn-md font-weight-bolder"-->
+<!--               id="btn_history_modal">-->
+<!--              <i class="far fa-file-alt icon-md"></i> 보수내역-->
+<!--            </a>-->
             <a href="javascript:;" class="btn disabled btn-outline-secondary btn-hover-secondary btn-md font-weight-bolder"
                id="btn_photo_modal">
               <i class="far fa-file-image icon-md"></i> 사진보기

@@ -11,18 +11,14 @@ function openModal() {
 function closeModal(event) {
   // Check if the click occurred outside the modal content
   if (event.target === modalContainer) {
-    // Remove the modal from the DOM
-    document.body.removeChild(modalContainer);
+    // Hide the modal, but don't remove it from the DOM
+    modalContainer.style.display = 'none';
     // Remove the event listener to prevent potential issues
     modalContainer.removeEventListener('click', closeModal);
-    // Reset the modalContainer variable to null
-    modalContainer = null;
   } else if (event.target.id === 'closeModal') {
-    // If the click occurred on the close button, close the modal
-    document.body.removeChild(modalContainer);
+    // If the click occurred on the close button, hide the modal
+    modalContainer.style.display = 'none';
     modalContainer.removeEventListener('click', closeModal);
-    // Reset the modalContainer variable to null
-    modalContainer = null;
   }
 }
 
@@ -36,9 +32,9 @@ function onClickOverlay(event) {
   const newFeature = selectInteraction.getFeatures().getArray().map(f => {
     const number = f.get('관리번호');
     const pdfname = `${number}.pdf`;
-    return pdfname;
+    return pdfname
   });
-  console.log(newFeature, `확인좀요${newFeature}`);
+  console.log(newFeature, `확인좀요${newFeature}`, selectInteraction.getFeatures());
 
   // Create a modal container
   modalContainer = document.createElement('div');
@@ -51,7 +47,7 @@ function onClickOverlay(event) {
         <div class="nav-item text-nowrap" id="pdfmodal">
           <a href="pdfjs-4.0.189-dist/web/viewer.html?file=survey/${newFeature}">크게보기</a>
           <br>
-          <iframe src="pdfjs-4.0.189-dist/web/viewer.html?file=survey/${newFeature}" style="width:100%; height:300px; border:1px solid black;"></iframe>
+          <iframe src="pdfjs-4.0.189-dist/web/viewer.html?file=survey/${newFeature}" style="width:100%; height:500px; border:1px solid black;"></iframe>
         </div>
       </div>
       <button id="closeModal">Close</button>`;
@@ -68,7 +64,7 @@ function onClickOverlay(event) {
   modalContainer.style.top = '0';
   modalContainer.style.bottom = '0';
   modalContainer.style.left = '0';
-  modalContainer.style.right = '0';
+  modalContainer.style.right = '50px';
   modalContainer.style.marginRight = '500px';
   modalContainer.style.marginLeft = '500px';
   modalContainer.style.marginBottom = '500px';
@@ -83,7 +79,7 @@ function onClickOverlay(event) {
   modalContent.style.borderRadius = '8px';
   modalContent.style.textAlign = 'center';
   modalContent.style.zIndex = '10';
-  modalContent.style.bottom = '200px';
+  modalContent.style.bottom = '50pxpx';
 
   // Attach open and close modal functions to elements
   document.getElementById('pdfmodal').addEventListener('click', openModal);

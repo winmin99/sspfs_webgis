@@ -9,7 +9,7 @@ import bodyParser from 'body-parser';
 import postgresql from './middlewares/postgresql/index';
 import session from 'express-session';
 import connect_pg_simple from 'connect-pg-simple';
-import csrf from 'csurf';
+// import csrf from 'csurf';
 import rateLimiter from './middlewares/rate-limiter/index';
 import cors from 'cors';
 import passport from 'passport';
@@ -40,13 +40,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-const csrfOptions = {
-  cookie: {
-    httpOnly: true,
-    sameSite: 'strict',
-  },
-};
-app.use(csrf(csrfOptions));
+// const csrfOptions = {
+//   cookie: {
+//     httpOnly: true,
+//     sameSite: 'strict',
+//   },
+// };
+// app.use(csrf(csrfOptions));
 
 const postgresqlSession = connect_pg_simple(session);
 const sessionOptions = {
@@ -84,8 +84,12 @@ const router = express.Router();
 routes(router, passport);
 app.use('/', router);
 app.get("/login", bodyParser.urlencoded({extended: false}),(req, res) => {
-  res.render("login.html");
+  res.render("signin.html");
 });
+// app.get('/auth/logout', function(req, res){
+//   delete req.session.displayName;
+//   res.redirect('/login');
+// });
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

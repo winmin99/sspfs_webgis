@@ -18,8 +18,8 @@ const _itemEl = htmlToElement(`<div class="d-flex flex-column ml-3 mt-3 mb-3">
 </div>`);
 
 const ROWS = 'rows';
-const CNAME = 'cname';
-const CNAME_filter = new Set([
+const CNAME = 'fac_typ';
+/*const CNAME_filter = new Set([
   // 상수관로
   '공업용수관',
   '급수관',
@@ -36,12 +36,16 @@ const CNAME_filter = new Set([
   '지수전',
   // 급수전
   '급수전',
-]);
+]);*/
+const CNAME_filter = new Set([
+  '소교량',
+  '세천',
+])
 const COORDINATE = 'coordinate';
 const FAC_NAM = 'fac_nam';
 const HJD_NAM = 'hjd_nam';
 const BJD_NAM = 'bjd_nam';
-const FTR_IDN = 'ftr_idn';
+const FTR_IDN = 'fac_uid';
 
 function formatFacilitySearch(response) {
   return new Promise(resolve => {

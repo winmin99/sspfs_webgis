@@ -11,11 +11,10 @@ export default {
   search(req, res, next) {
     postgresql.executeQuery(
       `SELECT *
-       FROM viw_search_tb
-       WHERE (fac_nam LIKE $1 OR cname LIKE $1 OR ftr_idn = $2)
-         AND (role_name = $3)
-       ORDER BY cname, (CASE WHEN fac_nam IS NULL OR fac_nam = '' THEN 1 ELSE 0 END), fac_nam ASC;`,
-      [`%${req.query['query']}%`, req.query['query'], '상수'], // TODO: '상수' Role 처리
+       FROM view_search
+       WHERE (fac_nam LIKE $1 OR fac_typ LIKE $1 OR fac_uid = $2)         
+       ORDER BY fac_typ, (CASE WHEN fac_nam IS NULL OR fac_nam = '' THEN 1 ELSE 0 END), fac_nam ASC;`,
+      [`%${req.query['query']}%`, req.query['query']], // TODO: '상수' Role 처리
     ).then(result => {
       res.status(200).json(result);
     }).catch(next);

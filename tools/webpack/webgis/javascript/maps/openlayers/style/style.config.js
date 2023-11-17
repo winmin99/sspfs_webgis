@@ -136,7 +136,7 @@ export default {
     },
     '마을진입로': {
       stroke: {
-        color: '#00b0ff',
+        color: '#022c70',
         dash: null,
         width: 1.5,
       },
@@ -854,7 +854,7 @@ export default {
       image: {
         opacity: 1,
         scale: 1,
-        src: 'SA122',
+        src: 'pngwing.com (2)',
       },
       text: {
         color: null,
@@ -868,7 +868,7 @@ export default {
       image: {
         opacity: 1,
         scale: 0.6,
-        src: 'EP002',
+        src: 'pngwing.com(3)',
       },
       text: {
         color: null,

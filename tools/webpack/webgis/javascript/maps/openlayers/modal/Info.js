@@ -89,7 +89,7 @@ export default class InfoModal extends ModalOverlay {
 <th>관리자</th>
 <td>${response[0]['관리자']}</td>
 <th>대장작성일</th>
-<td>${response[0]['대장작성일']}</td>
+<td colspan="5">${response[0]['대장작성일']}</td>
 </tr>
 <tr>
 <th>소유자/점유자<br>또는 관리인</th>
@@ -97,11 +97,11 @@ export default class InfoModal extends ModalOverlay {
 <th>위험시설<br>지정일</th>
 <td>${response[0]['위험시설지정일']=== null ? '' : response[0]['위험시설지정일']}</td>
 <th>위험시설 지정<br>고시번호</th>
-<td>${response[0]['위험시설지정고시번호']=== null ? '' : response[0]['위험시설지정고시번호']}</td>
+<td colspan="5">${response[0]['위험시설지정고시번호']=== null ? '' : response[0]['위험시설지정고시번호']}</td>
 </tr>
 <tr>
 <th>위치</th>
-<td colspan="5">${response[0]['위치']}</td>
+<td colspan="10">${response[0]['위치']}</td>
 </tr>
 <tr>
 <!--<th>폭</th>-->
@@ -111,21 +111,21 @@ export default class InfoModal extends ModalOverlay {
 <th>연장</th>
 <td>${response[0]['제원_연장']}</td>
 <th>높이</th>
-<td>${response[0]['제원_높이']=== undefined ? '' : response[0]['제원_높이']}</td>
+<td colspan="5">${response[0]['제원_높이']=== undefined ? '' : response[0]['제원_높이']}</td>
 </tr>
 <tr>
 <th>수혜구역</th>
-<td>${response[0]['수혜구역']=== null ? '' : response[0]['수혜구역']}</td>
+<td colspan="10">${response[0]['수혜구역']=== null ? '' : response[0]['수혜구역']}</td>
 </tr>
 <tr>
 <th>시설부속물_수량</th>
 <td>${response[0]['시설부속물_총수량']=== null ? '' : response[0]['시설부속물_총수량']}</td>
 <th>시설부속물_유형</th>
-<td>${response[0]['시설부속물_유형별'] === null ? '' : response[0]['시설부속물_유형별']}</td>
+<td colspan="10">${response[0]['시설부속물_유형별'] === null ? '' : response[0]['시설부속물_유형별']}</td>
 </tr>
 <tr>
 <th>그 밖의 사항</th>
-<td>${response[0]['그밖의사항'] === null ? '' : response[0]['그밖의사항']}</td>
+<td colspan="10">${response[0]['그밖의사항'] === null ? '' : response[0]['그밖의사항']}</td>
 </tr>
 </table>
 <br>

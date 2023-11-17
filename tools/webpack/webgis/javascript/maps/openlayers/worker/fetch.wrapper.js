@@ -18,7 +18,7 @@ class FetchWorkerWrapper {
       .setFetchUrl(url)
       .setContentType(opt_type)
       .setWorker(this._worker)
-      .catch(err => $.notify({ message: `정보를 불러오지 못하였습니다<br>(${err})` }, { type: 'danger' }))
+      .catch(err => $.notify({ message: `정보를 불러오지 못하였습니다 로그인 여부를 확인해주세요<br>(${err})` }, { type: 'danger' }))
       .finally(() => this.clear());
   }
 
