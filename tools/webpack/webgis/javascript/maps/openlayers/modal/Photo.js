@@ -38,7 +38,6 @@ export default class PhotoModal extends ModalOverlay {
 
     let _layer = that.getFeature('layer');
     let _layer2 = window.webgis.table.photo
-    console.log(_layer,_layer2)
     let _layerSub = that.getFeature('layerSub');
     // _layerSub = _layerSub.match(/(.*받이)/g) !== null ? '물받이' : _layerSub;
     let _id = that.getFeature('id');

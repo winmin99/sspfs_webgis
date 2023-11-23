@@ -16,6 +16,8 @@ import {
 } from './event';
 import { FileExport } from './file';
 import {onClickOverlay} from "./modal/PdfModal";
+import {onClickRiskOverlay} from "./modal/riskPdfModal";
+import {onClickGeneralOverlay} from "./modal/GeneralPdf";
 
 const vectorLayer = new Vector();
 vectorLayer.toggleLayers(window.webgis.table.vector);
@@ -47,6 +49,8 @@ const selectInteraction = new SelectInteraction({ map: map });
 map.addInteraction(selectInteraction);
 
 selectInteraction.on('select', onClickOverlay);
+selectInteraction.on('select', onClickRiskOverlay)
+selectInteraction.on('select', onClickGeneralOverlay)
 
 // const fileImport = new FileImport({ map, view });
 const fileExport = new FileExport({ map, view, vectorLayer });

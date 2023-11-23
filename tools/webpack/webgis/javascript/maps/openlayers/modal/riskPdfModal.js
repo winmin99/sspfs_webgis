@@ -22,7 +22,7 @@ function closeModal(event) {
   }
 }
 
-function onClickOverlay(event) {
+function onClickRiskOverlay(event) {
   // Check if a modal is already open, and if so, close it
   if (modalContainer) {
     closeModal({ target: modalContainer });
@@ -43,9 +43,9 @@ function onClickOverlay(event) {
   modalContent.className = 'modal-content';
   modalContent.innerHTML = `<div class="navbar-nav">
         <div class="nav-item text-nowrap" id="pdfmodal">
-          <a href="pdfjs-4.0.189-dist/web/viewer.html?file=survey/${newFeature}">크게보기</a>
+          <a href="pdfjs-4.0.189-dist/web/viewer.html?file=risk/${newFeature}">크게보기</a>
           <br>
-          <iframe src="pdfjs-4.0.189-dist/web/viewer.html?file=survey/${newFeature}" style="width:100%; height:500px; border:1px solid black; padding: 1px;"></iframe>
+          <iframe src="pdfjs-4.0.189-dist/web/viewer.html?file=risk/${newFeature}" style="width:100%; height:500px; border:1px solid black;"></iframe>
         </div>
       </div>
       <button id="closeModal">닫기</button>`;
@@ -80,9 +80,9 @@ function onClickOverlay(event) {
   modalContent.style.bottom = '50pxpx';
 
   // Attach open and close modal functions to elements
-  document.getElementById('pdfmodal').addEventListener('click', openModal);
+  document.getElementById('pdfmodal2').addEventListener('click', openModal);
   modalContainer.addEventListener('click', closeModal);
   document.getElementById('closeModal').addEventListener('click', closeModal);
 }
 
-export { onClickOverlay };
+export { onClickRiskOverlay };

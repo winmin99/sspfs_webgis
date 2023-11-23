@@ -111,7 +111,7 @@ export default class InfoModal extends ModalOverlay {
 <th>연장</th>
 <td>${response[0]['제원_연장']}</td>
 <th>높이</th>
-<td colspan="5">${response[0]['제원_높이']=== undefined ? '' : response[0]['제원_높이']}</td>
+<td colspan="5">${response[0]['제원_높이'] === undefined || response[0]['제원_높이'] === null ? '' : response[0]['제원_높이']}</td>
 </tr>
 <tr>
 <th>수혜구역</th>
@@ -125,7 +125,7 @@ export default class InfoModal extends ModalOverlay {
 </tr>
 <tr>
 <th>그 밖의 사항</th>
-<td colspan="10">${response[0]['그밖의사항'] === null ? '' : response[0]['그밖의사항']}</td>
+<td colspan="10">${response[0]['그밖의사항'] === undefined ? '' : response[0]['그밖의사항']}</td>
 </tr>
 </table>
 <br>
@@ -177,7 +177,6 @@ export default class InfoModal extends ModalOverlay {
   checkPhotoAndHistory() {
     let that = this;
     let _layer = that.getFeature('layer');
-    console.log('check layer: ', _layer)
     let _layer2 = window.webgis.table.photo
     let _layerSub = that.getFeature('layer');
     _layerSub = _layerSub.match(/(.*받이)/g) !== null ? '물받이' : _layerSub;
