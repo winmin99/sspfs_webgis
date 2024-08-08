@@ -42,7 +42,7 @@ $(document).on('click', '.addr-clipboard', function (event) {
   el.style.left = '-9999px';
   document.body.appendChild(el);
   el.select();
-  navigator.clipboard.writeText(el.value);
+  document.execCommand('copy');
   document.body.removeChild(el);
   $(addressOverlay.getElement()).popover('hide');
   $.notify({

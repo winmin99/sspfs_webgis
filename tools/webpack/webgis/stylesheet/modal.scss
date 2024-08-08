@@ -2,7 +2,8 @@
 
 #kt_chat_modal {
 
-  max-width: 515px;
+  max-width: 670px;
+  z-index: 10;
 
   .card-header {
     font-size: 13px !important;
@@ -16,35 +17,41 @@
   .card-body {
     @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
     font-family: "Roboto", helvetica, arial, sans-serif;
-    font-size: 11px !important;
-    padding: 0;
+    font-size: 13px !important;
+    //padding: 10px;
+    //padding-right: 20px;
     font-weight: 400;
     text-rendering: optimizeLegibility;
 
     .table th {
-      background:#1b1e24;
-      white-space: nowrap;
+      //background:#1b1e24;
       overflow: hidden;
       padding: 0.5rem 0.5rem;
+      //margin: 10px;
       color:black;;
-      background:#F0EDCC;
-      border-bottom:4px solid #9ea7af;
-      border-right: 1px solid #343a45;
-      font-weight: 100;
-      text-align:left;
+      background:#FFFFFF;
+      border: 1px solid #343a45;
+      //border-bottom:4px solid #9ea7af;
+      //border-right: 1px solid #343a45;
+      font-weight: bold;
+      text-align:center;
       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
       vertical-align:middle;
       width: 20px;
       height: 10px;
     }
     .table tr {
-      border-top: 1px solid #C1C3D1;
-      border-bottom-: 1px solid #C1C3D1;
+      //border-top: 1px solid #C1C3D1;
+      //border-bottom: 1px solid #C1C3D1;
+      word-wrap:break-word;
+      overflow-x:hidden;
+      overflow-y:hidden;
       color:#666B85;
       font-weight:normal;
       text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
       width: 20px;
       height: 10px;
+      margin: 10px;
     }
     //tr:hover td {
     //  background:#F0EDCC;
@@ -61,7 +68,7 @@
     }
 
     tr:nth-child(odd) td {
-      background:#EBEBEB;
+      background:#FFFFFF;
     }
 
     //tr:nth-child(odd):hover td {
@@ -77,16 +84,18 @@
     }
 
     .table td {
+      word-break: break-word;
       padding: 0.5rem 0.5rem;
       background:#FFFFFF;
       text-align:left;
       vertical-align:middle;
-      font-weight:300;
-      text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-      border-right: 1px solid #C1C3D1;
+      //font-weight:300;
+      //text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+      border: 1px solid #343a45;
+      //border-right: 1px solid #FFFFFF;
     }
     td:last-child {
-      border-right: 0px;
+      //border-right: 3px;
     }
 
     th.text-left {
@@ -265,16 +274,31 @@
     .btn {
       font-size: 13px !important;
       padding: 0.5rem 0.75rem;
+      border-radius: 5px;
     }
   }
 }
 .btn-style{
+  font-size:13px !important;
   border-radius: 5px;
-  border-color: #f7f5f0;
-  background-color: white;
+  border-color: black;
+  border-width: thin;
+  background-color: transparent;
+  //color: #27c8c1 !important;
+  padding: 0.5rem 0.75rem;
+  text-decoration-line: none;
+  outline: black;
 }
 
 .btn-style:hover{
-  background-color: skyblue;
-  transition: 0.7s;
+  background: black;
+  color: white;
 }
+
+.black, .white btn {  color: black;
+}
+
+.black:hover{
+  color: white;
+}
+

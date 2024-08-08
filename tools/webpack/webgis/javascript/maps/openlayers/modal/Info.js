@@ -1,12 +1,10 @@
-import { getCenter } from 'ol/extent';
-import { default as ModalOverlay } from './Modal';
-import { default as HistoryModal } from './History';
-import { default as PhotoModal } from './Photo';
-import { default as PdfModal } from './PdfModal';
-import { default as fetchWorker } from '../worker/fetch.wrapper';
-import { featureDateFilter, featureNameFilter, unitFilter } from '../filter';
-import { view } from '../view';
-import {selectInteraction} from "../map";
+import {getCenter} from 'ol/extent';
+import {default as ModalOverlay} from './Modal';
+import {default as HistoryModal} from './History';
+import {default as PhotoModal} from './Photo';
+import {default as fetchWorker} from '../worker/fetch.wrapper';
+import {featureDateFilter, featureNameFilter, unitFilter} from '../filter';
+import {view} from '../view';
 
 export default class InfoModal extends ModalOverlay {
 
@@ -73,84 +71,15 @@ export default class InfoModal extends ModalOverlay {
           if (key.includes(filter)) {
             filterKey = filter;
             return true;
-          } return false;
+          }
+          return false;
         }) && value != null) {
           value = `${value} ${unitFilter.get(filterKey)}`;
         }
         if (key === '') {
           tableRow = '';
         } else {
-            tableRow = `
-<table>
-<thead>1.시설 현황</thead>
-<tr>
-<th>시설 명칭</th>
-<td>${response[0]['시설명칭']}</td>
-<th>관리자</th>
-<td>${response[0]['관리자']}</td>
-<th>대장작성일</th>
-<td colspan="5">${response[0]['대장작성일']}</td>
-</tr>
-<tr>
-<th>소유자/점유자<br>또는 관리인</th>
-<td>${response[0]['소유자']=== null ? '' : response[0]['소유자']}</td>
-<th>위험시설<br>지정일</th>
-<td>${response[0]['위험시설지정일']=== null ? '' : response[0]['위험시설지정일']}</td>
-<th>위험시설 지정<br>고시번호</th>
-<td colspan="5">${response[0]['위험시설지정고시번호']=== null ? '' : response[0]['위험시설지정고시번호']}</td>
-</tr>
-<tr>
-<th>위치</th>
-<td colspan="10">${response[0]['위치']}</td>
-</tr>
-<tr>
-<!--<th>폭</th>-->
-<!--<td>${response[0]["제원_폭"]=== undefined ? '' : response[0]['제원_폭']}</td>-->
-<th>평균 폭</th>
-<td>${response[0]["제원_평균폭"]=== undefined ? '' : response[0]['제원_평균폭']}</td>
-<th>연장</th>
-<td>${response[0]['제원_연장']}</td>
-<th>높이</th>
-<td colspan="5">${response[0]['제원_높이'] === undefined || response[0]['제원_높이'] === null ? '' : response[0]['제원_높이']}</td>
-</tr>
-<tr>
-<th>수혜구역</th>
-<td colspan="10">${response[0]['수혜구역']=== null ? '' : response[0]['수혜구역']}</td>
-</tr>
-<tr>
-<th>시설부속물_수량</th>
-<td>${response[0]['시설부속물_총수량']=== null ? '' : response[0]['시설부속물_총수량']}</td>
-<th>시설부속물_유형</th>
-<td colspan="10">${response[0]['시설부속물_유형별'] === null ? '' : response[0]['시설부속물_유형별']}</td>
-</tr>
-<tr>
-<th>그 밖의 사항</th>
-<td colspan="10">${response[0]['그밖의사항'] === undefined ? '' : response[0]['그밖의사항']}</td>
-</tr>
-</table>
-<br>
-<br>
-<table>
-<thead>2.시설 정비 현황</thead>
-<tr>
-<th>구분</th>
-<th>사업량_연장</th>
-<th>사업량_폭</th>
-<th>사업비</th>
-<th>착공일</th>
-<th>준공일</th>
-<th>시설부속물</th>
-</tr>
-<tr>
-<th>전체계획</th>
-<td>${response[0]['전체계획_사업량_연장'] === null ? '' : response[0]['전체계획_사업량_연장']}</td>
-<td>${response[0]['전체계획_사업량_폭'] === null ? '' : response[0]['전체계획_사업량_폭']}</td>
-<td>${response[0]['전체계획_사업비'] === null ? '' : response[0]['전체계획_사업비']}</td>
-<td>${response[0]['전체계획_착공일'] === null ? '' : response[0]['전체계획_착공일']}</td>
-<td>${response[0]['전체계획_준공일'] === null ? '' : response[0]['전체계획_준공일']}</td>
-<td>${response[0]['전체계획_시설부속물'] === null ? '' : response[0]['전체계획_시설부속물']}</td>
-</tr>
-</table>`;
+          tableRow = setTableHTML(response[0]);
         }
         return value;
       });
@@ -171,6 +100,116 @@ export default class InfoModal extends ModalOverlay {
       that['.card-body tbody'].html(tableRows);
       that['.card-body tbody'][0].scrollIntoView();
       return that;
+    }
+
+    function setTableHTML(res) {
+      const spec = switchWidthHTML(res)
+      const spec2 = switchWidthHTML2(res)
+      return `
+        <table>
+	<h6 style="font-weight: bold; font-size: 1rem">1.시설 현황</h6>
+	<tr>
+		<th style="width: 15%;">시설 명칭</th>
+		<td style="width: 20%;" colspan="2">${res['시설명칭'] !== null ? res['시설명칭'] : ""}</td>
+		<th style="width: 15%;">관리자</th>
+		<td style="width: 15%; text-align: center" colspan="2">${res['관리자'] !== null ? res['관리자'] : ""}</td>
+		<th style="width: 20%;">대장작성일</th>
+		<td style="width: 15%; text-align: center">${res['대장작성일'] !== null ? res['대장작성일'] : ""}</td>
+	</tr>
+	<tr>
+		<th>소유자/점유자<br>또는 관리인</th>
+		<td style="text-align: center" colspan="2">${res['소유자'] !== null ? res['소유자'] : ""}</td>
+		<th>위험시설<br>지정일</th>
+		<td style="text-align: center" colspan="2">${res['위험시설지정일'] !== null ? res['위험시설지정일'] : ""}</td>
+		<th>위험시설 지정<br>고시번호</th>
+		<td style="text-align: center">${res['위험시설지정고시번호'] !== null ? res['위험시설지정고시번호'] : ""}</td>
+	</tr>
+	<tr>
+		<th>위치</th>
+		<td colspan="7">${res['위치'] !== null ? res['위치'] : ""}</td>
+	</tr>
+	<tr>
+		${spec}
+	</tr>
+	<tr>
+		<th>수혜구역</th>
+		<td colspan="7">${res['수혜구역'] !== null ? res['수혜구역'] : ""}</td>
+	</tr>
+	<tr>
+		<th>시설부속물</th>
+<!--		<td colspan="7">총 ${res['시설부속물_총수량'] !== null ? res['시설부속물_총수량'] : ""}개소 (유형별: ${res['시설부속물_유형별'] !== null ? res['시설부속물_유형별'] : ""})</td>-->
+        <td colspan="7">${res['시설부속물_총수량'] !== null ? `총 ${res['시설부속물_총수량']}개소 ${res['시설부속물_유형별'] !== null ? `(유형별: ${res['시설부속물_유형별']})` : ""}` : ""}</td>
+	</tr>
+	<tr>
+		${spec2}
+	</tr>
+  </table>
+  <br>
+  <br>
+
+  <table>
+	<h6 style="font-weight: bold; font-size: 1rem">2.시설 정비 현황</h6>
+	<tr>
+		<th style="width: 15%;" rowspan="2">구분</th>
+		<th style="width: 20%;" colspan="2">제원(m)</th>
+		<th style="width: 15%;" rowspan="2">사업비<br>(백만원)</th>
+		<th style="width: 15%;" colspan="2">공사기간</th>
+		<th style="width: 35%;" colspan="2" rowspan="2">시설부속물</th>
+	</tr>
+	<tr>
+		<th style="width: 10%;">연장</th>
+		<th style="width: 10%;">폭</th>
+		<th style="width: 7.5%;">착공</th>
+		<th style="width: 7.5%;">준공</th>
+	</tr>
+          <tr>
+            <th>전체계획</th>
+            <td>${res['전체계획_사업량_연장'] === '0.00' ? '' : res['전체계획_사업량_연장'] === null ? '' : res['전체계획_사업량_연장']}</td>
+            <td>${res['전체계획_사업량_폭'] === '0.00' ? '' : res['전체계획_사업량_폭'] === null ? '' : res['전체계획_사업량_폭']}</td>
+            <td style="text-align: end">${res['전체계획_사업비'] === '0.00' ? '' : res['전체계획_사업비'] === null ? '' : res['전체계획_사업비']}</td>
+            <td>${res['전체계획_착공일'] === '0.00' ? '' : res['전체계획_착공일'] === null ? '' : res['전체계획_착공일']}</td>
+            <td>${res['전체계획_준공일'] === '0.00' ? '' : res['전체계획_준공일'] === null ? '' : res['전체계획_준공일']}</td>
+            <td colspan="2">${res['전체계획_시설부속물'] === '0.00' ? '' : res['전체계획_시설부속물'] === null ? '' : res['전체계획_시설부속물']}</td>
+          </tr>
+      </table>
+
+`
+    }
+
+    function switchWidthHTML(res) {
+      switch (res["레이어"]) {
+        case "소교량":
+          return `<th>폭</th>
+            <td colspan="2">${res["제원_폭"] === undefined ? '' : res['제원_폭']} m</td>
+            <th>연 장</th>
+            <td colspan="2">${res['제원_연장'] === null ? '' : res['제원_연장']} m</td>
+            <th>높 이</th>
+            <td>${res['제원_높이'] === undefined || res['제원_높이'] === null ? '' : res['제원_높이']} m</td>`
+        case "낙차공":
+          return `<th>연 장</th>
+            <td colSpan="3">${res['제원_연장'] === null ? '' : res['제원_연장']} m</td>
+            <th colspan="2">높 이</th>
+            <td colspan="2">${res['제원_높이'] === undefined || res['제원_높이'] === null ? '' : res['제원_높이']} m</td>`
+        default:
+          return `<th>연 장</th>
+            <td colspan="3">${res['제원_연장'] === null ? '' : res['제원_연장']} m</td>
+            <th colspan="2">평균 폭</th>
+            <td colspan="2">${res["제원_평균폭"] === undefined ? '' : res['제원_평균폭']} m</td>`
+      }
+    }
+
+    function switchWidthHTML2(res) {
+      switch (res["레이어"]) {
+        case "소교량":
+          return `<th>그 밖의 사항</th>
+            <td colspan="7">${res['그밖의사항'] === null ? `구조형식:${res['구조형식']}` : `구조형식:${res['구조형식']}/ ${res["그밖의사항"]}`}</td>`
+        case "낙차공":
+          return `<th>그 밖의 사항</th>
+            <td colspan="7">${res['그밖의사항'] === null ? `구조형식:${res['구조형식']}` : `구조형식:${res['구조형식']}/ ${res["그밖의사항"]}`}</td>`
+        default:
+          return `<th>그 밖의 사항</th>
+            <td colspan="7">${res['그밖의사항'] === null ? '' : res['그밖의사항']}</td>`
+      }
     }
   }
 
@@ -198,7 +237,7 @@ export default class InfoModal extends ModalOverlay {
     function onButtonEnable(element) {
       element
         .removeClass('disabled btn-outline-secondary btn-hover-secondary')
-        .addClass('btn-outline-success btn-hover-success');
+        .addClass('btn-outline-dark btn-hover-dark');
     }
 
     function onButtonDisable(element) {
@@ -244,4 +283,5 @@ export default class InfoModal extends ModalOverlay {
     this._interaction = interaction;
   }
 }
+
 

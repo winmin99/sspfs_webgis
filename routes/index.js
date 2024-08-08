@@ -7,7 +7,7 @@ import {router} from "express/lib/application";
 export default function (router, passport) {
   const user = {
     id: 'admin',
-    password: '1234',
+    password: 'qhdghk12',
     displayName: 'Bonghwa', // Add display name for testing
   };
   router.get('/',checkAuth, function (req, res) {

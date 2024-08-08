@@ -129,23 +129,23 @@ export default {
     },
     '농로': {
       stroke: {
-        color: '#0045ff',
+        color: '#00ff00',
         dash: null,
-        width: 1.5,
+        width: 3.0,
       },
     },
     '마을진입로': {
       stroke: {
-        color: '#022c70',
+        color: '#00ffff',
         dash: null,
-        width: 1.5,
+        width: 3.0,
       },
     },
     '세천': {
       stroke: {
-        color: '#18ffff',
+        color: '#0000ff',
         dash: null,
-        width: 1.5,
+        width: 3.0,
       },
     }
   },

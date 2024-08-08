@@ -6,6 +6,7 @@ import { default as projection } from './projection';
 // import { coordinateToLatLng } from '../naver/util';
 import { map, mapContainer, viewSyncOptions } from '../kakao/map';
 import { coordinateToLatLng, onClickMapTypeButton } from '../kakao/util';
+import CustomOverlay from './map-ui';
 
 const localStorage = new LocalStorage();
 
@@ -42,7 +43,7 @@ function onChangeCenter() {
       map.setCenter(latLng);
     });
 }
-
+const customOverlay = new CustomOverlay();
 function onMoveEnd(event) {
   event.preventDefault();
   if (~~view.getZoom() !== currentZoom) {
@@ -52,9 +53,17 @@ function onMoveEnd(event) {
         // case 5:
         //   _toggleOverlay(null);
         case 14:
-          if (mapContainer.style.display !== 'block') {
-            mapContainer.style.display = 'block';
-          }
+            customOverlay.kakaoHybrid
+              .fire({
+                confirmButtonText: '확인',
+                icon: 'error',
+                titleText: '현재 지도의 최대 확대 레벨입니다 더 확대하면 지도가 표시되지 않습니다.'
+              })
+              .then(function (result) {
+                if (result.value) {
+                  view.setZoom(13.3);
+                }
+              });
         // eslint-disable-next-line no-fallthrough
         case 13:
         case 12:
@@ -64,6 +73,9 @@ function onMoveEnd(event) {
         case 8:
         case 7:
         case 6: {
+          if (mapContainer.style.display !== 'block') {
+            mapContainer.style.display = 'block';
+          }
           view.setZoom(newZoom + decimal);
           map.setZoom(coefficient * newZoom + delta);
           break;

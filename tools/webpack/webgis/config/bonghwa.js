@@ -22,7 +22,6 @@ const globalOptions = Object.assign(defaultOptions, {
           'view_manage_d',
           'view_manage_e',
           'view_manage_f',
-          // 'view_manage_line',
         ],
         image: [
             'n3a_a0010000',

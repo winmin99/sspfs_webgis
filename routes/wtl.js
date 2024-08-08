@@ -89,7 +89,8 @@ export default {
   infoPhoto(req, res, next) {
     postgresql.executeQuery(
       // `SELECT * FROM ${req.query['table']} WHERE 시설물구분="${req.query['layer']}" AND 관리번호=${req.query['id']} ORDER BY 현황사진 ASC;`,
-      `SELECT (JSONB_ARRAY_ELEMENTS(현황사진)) ->> 'url' AS url, (JSONB_ARRAY_ELEMENTS(현황사진)) ->> 'name' AS img_name
+      `SELECT CONCAT('http://111.21.1.79', ':', '3000', '/', (JSONB_ARRAY_ELEMENTS(현황사진)) ->> 'url') AS url,
+              (JSONB_ARRAY_ELEMENTS(현황사진)) ->> 'name' AS img_name
        FROM ${req.query['table']}
        WHERE "레이어" = '${req.query['layer']}'
          AND "관리번호" = '${req.query['id']}'

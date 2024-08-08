@@ -34,6 +34,7 @@ import { InfoModal } from './modal';
 import { Vector as VectorLayer } from 'ol/layer';
 import { getArea, getLength } from 'ol/sphere';
 import { unByKey } from 'ol/Observable';
+import { selectInteraction } from './map';
 
 export default defaultInteractions({
   altShiftDragRotate: false,
@@ -117,7 +118,7 @@ export class SelectInteraction extends Select {
     event.preventDefault();
     this._overlay.setOverlay(null);
     let feature = event.selected ? event.selected[0] : this.getFeatures().item(0);
-    if (!feature) return;
+    if (!feature) return selectInteraction.getFeatures().getArray().get('관리번호').pdf;
     switch (feature.getGeometry().getType()) {
       case 'LineString':
       case 'MultiLineString': {

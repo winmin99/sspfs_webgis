@@ -707,7 +707,7 @@ export default {
   view_manage_a: {
     label: null,
     maxZ: 21,
-    minZ: 9,
+    minZ: 7,
     propertyName: [
       'geom',
       '레이어',
@@ -718,7 +718,7 @@ export default {
   view_manage_b: {
     label: null,
     maxZ: 21,
-    minZ: 9,
+    minZ: 7,
     propertyName: [
       'geom',
       '레이어',
@@ -729,7 +729,7 @@ export default {
   view_manage_d: {
     label: null,
     maxZ: 21,
-    minZ: 9,
+    minZ: 7,
     propertyName: [
       'geom',
       '레이어',
@@ -740,7 +740,7 @@ export default {
   view_manage_e: {
     label: null,
     maxZ: 21,
-    minZ: 9,
+    minZ: 7,
     propertyName: [
       'geom',
       '레이어',
@@ -751,7 +751,7 @@ export default {
   view_manage_f: {
     label: null,
     maxZ: 21,
-    minZ: 9,
+    minZ: 7,
     propertyName: [
       'geom',
       '레이어',
