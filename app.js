@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import createError from 'http-errors';
 import express from 'express';
+import multer from 'multer'
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import { engine } from 'express-handlebars';
@@ -39,6 +40,28 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use('/uploads', express.static(path.join(__dirname, 'upload')));
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/"); // 이미지가 저장될 폴더
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname)); // 파일명: 현재 시간 + 확장자
+  }
+});
+
+const upload = multer({ storage: storage });
+
+// 이미지 업로드 라우트
+app.post("/upload", upload.single("image"), (req, res) => {
+  const newInfo = req.body;
+  if (!req.file) {
+    return res.status(400).json({ error: "파일 업로드 실패" });
+    console.log(req.file,"return check")
+  }
+  res.json({ message: "이미지 업로드 성공!", filePath: `/uploads/${req.file.filename}` });
+});
 
 // const csrfOptions = {
 //   cookie: {
